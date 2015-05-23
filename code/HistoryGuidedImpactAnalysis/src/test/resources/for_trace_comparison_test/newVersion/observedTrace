@@ -1,0 +1,20 @@
+{
+   "executionTraces": [
+      {
+         "traceIndex": 1,
+         "called": "nonexistent.nonexistent",
+         "calledWithParameters": [],
+         "returned": {
+            "class": "---",
+            "stringRepresentation": "void"
+         },
+         "trace": [
+            "[0]> ALOAD",
+            "[1]> INVOKESPECIAL",
+            "[2]> RETURN"
+         ],
+         "type": "CONSTRUCTOR"
+      }
+   ],
+   "errors": []
+}

@@ -1,0 +1,10 @@
+[
+   {
+      "pathInRepo": "src/thisPackageOfMine/ChildOfTestClass.java",
+      "type": "ADDED"
+   },
+   {
+      "pathInRepo": "src/thisPackageOfMine/TestClass.java",
+      "type": "MODIFIED"
+   }
+]

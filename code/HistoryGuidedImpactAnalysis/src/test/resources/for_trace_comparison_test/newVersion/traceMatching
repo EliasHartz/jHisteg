@@ -1,0 +1,26 @@
+[
+  {
+       "traceInThis": "file1_trace1",
+       "matchTo": "file1_trace1"
+  },
+  {
+       "traceInThis": "file1_trace2",
+       "matchTo": "file1_trace2"
+  },
+  {
+       "traceInThis": "file1_trace3",
+       "matchTo": "file1_trace3"
+  },
+  {
+       "traceInThis": "file1_trace4",
+       "matchTo": "file1_trace4"
+  },
+  {
+       "traceInThis": "file2_trace1",
+       "matchTo": "file0_trace1"
+  },
+  {
+       "traceInThis": "file2_trace2",
+       "matchTo": "file0_trace2"
+  }
+]

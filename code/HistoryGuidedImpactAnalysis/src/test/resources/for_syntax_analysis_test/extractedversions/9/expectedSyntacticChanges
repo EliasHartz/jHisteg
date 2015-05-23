@@ -1,0 +1,176 @@
+[
+   {
+      "affectedMethod": "<init>(LmainPackage/ClassWithInnerClass;F)V",
+      "class": "mainPackage.ClassWithInnerClass$PrivateInnerClass",
+      "codeAdded": "arr = new float[]{0.f, 1.f, 4f};",
+      "codeType": "ASSIGNMENT",
+      "level": "METHOD_LEVEL",
+      "type": "CODE_ADDITION"
+   },
+   {
+      "class": "mainPackage.ClassWithInnerClass",
+      "code": "mainPackage.ClassWithInnerClass.innerInstance : InnerClass",
+      "codeType": "SINGLE_TYPE",
+      "level": "CLASS_LEVEL",
+      "type": "CODE_MODIFICATION"
+   },
+   {
+      "class": "mainPackage.ClassWithInnerClass$InnerClass",
+      "code": "mainPackage.ClassWithInnerClass.InnerClass.intValue : int",
+      "codeType": "SINGLE_TYPE",
+      "level": "CLASS_LEVEL",
+      "type": "CODE_MODIFICATION"
+   },
+   {
+      "affectedMethod": "<init>(LmainPackage/ClassWithInnerClass;I)V",
+      "class": "mainPackage.ClassWithInnerClass$InnerClass",
+      "code": "intValue = new int[value];",
+      "codeBefore": "intValue = value;",
+      "codeType": "ASSIGNMENT",
+      "level": "METHOD_LEVEL",
+      "type": "CODE_MODIFICATION"
+   },
+   {
+      "affectedMethod": "<init>()V",
+      "class": "mainPackage.ClassWithInnerClass",
+      "code": "innerInstance = new InnerClass[]{new InnerClass(42)};",
+      "codeBefore": "innerInstance = new InnerClass(42);",
+      "codeType": "ASSIGNMENT",
+      "level": "METHOD_LEVEL",
+      "type": "CODE_MODIFICATION"
+   },
+   {
+      "affectedMethod": "store([[I[C)V",
+      "class": "mainPackage.ClassWithInnerClass$InnerClass",
+      "codeAdded": "store(int[][],char[])",
+      "codeType": "METHOD",
+      "level": "CLASS_LEVEL",
+      "type": "CODE_ADDITION"
+   },
+   {
+      "affectedMethod": "<init>(LmainPackage/ClassWithInnerClass;I)V",
+      "class": "mainPackage.ClassWithInnerClass$InnerClass",
+      "codeRemoved": "(value < 0)",
+      "codeType": "IF_STATEMENT",
+      "level": "METHOD_LEVEL",
+      "type": "CODE_REMOVAL"
+   },
+   {
+      "class": "mainPackage.ClassWithInnerClass$PrivateInnerClass",
+      "codeAdded": "float[] arr",
+      "codeType": "FIELD",
+      "level": "CLASS_LEVEL",
+      "type": "CODE_ADDITION"
+   },
+   {
+      "affectedMethod": "<init>(LmainPackage/ClassWithInnerClass;I)V",
+      "class": "mainPackage.ClassWithInnerClass$InnerClass",
+      "codeRemoved": "value = (- value);",
+      "codeType": "ASSIGNMENT",
+      "level": "METHOD_LEVEL",
+      "type": "CODE_REMOVAL"
+   },
+   {
+      "class": "thisPackageOfMine.TestClass",
+      "codeAdded": "ArrayList<String> myOtherStringList",
+      "codeType": "FIELD",
+      "level": "CLASS_LEVEL",
+      "type": "CODE_ADDITION"
+   },
+   {
+      "affectedMethod": "<init>()V",
+      "class": "thisPackageOfMine.TestClass",
+      "code": "(myNowRenamedBoolean && (stringList.size() > 5))",
+      "codeBefore": "(myNowRenamedBoolean && (anotherString.length() > 5))",
+      "codeType": "IF_STATEMENT",
+      "level": "METHOD_LEVEL",
+      "type": "CODE_MODIFICATION"
+   },
+   {
+      "affectedMethod": "<init>(Ljava/util/List;I)V",
+      "class": "thisPackageOfMine.TestClass",
+      "codeRemoved": "s",
+      "codeType": "PARAMETER",
+      "level": "CLASS_LEVEL",
+      "type": "CODE_REMOVAL"
+   },
+   {
+      "class": "thisPackageOfMine.TestClass",
+      "codeAdded": "ArrayList<List<String>> stringList",
+      "codeType": "FIELD",
+      "level": "CLASS_LEVEL",
+      "type": "CODE_ADDITION"
+   },
+   {
+      "classInPreviousVersion": "thisPackageOfMine.TestClass",
+      "codeRemoved": "String anotherString",
+      "codeType": "FIELD",
+      "level": "CLASS_LEVEL",
+      "type": "CODE_REMOVAL"
+   },
+   {
+      "affectedMethod": "<init>()V",
+      "class": "thisPackageOfMine.TestClass",
+      "codeAdded": "stringList.add(l);",
+      "codeType": "METHOD_INVOCATION",
+      "level": "METHOD_LEVEL",
+      "type": "CODE_ADDITION"
+   },
+   {
+      "affectedMethod": "<init>()V",
+      "class": "thisPackageOfMine.TestClass",
+      "code": "Runnable r = new Runnable() {\n  public @Override void run() {\n    int i = 0;\n    while ((i < 5))      myOtherStringList.add((i + \", lalala!\"));\n  }\n};",
+      "codeBefore": "Runnable r = new Runnable() {\n  public @Override void run() {\n    int i = 0;\n    while ((i < 5))      System.out.println(((anotherString + \" \") + (++ i)));\n  }\n};",
+      "codeType": "VARIABLE_DECLARATION_STATEMENT",
+      "level": "METHOD_LEVEL",
+      "type": "CODE_MODIFICATION"
+   },
+   {
+      "affectedMethod": "<init>()V",
+      "class": "thisPackageOfMine.TestClass",
+      "codeAdded": "LinkedList<String> l = new LinkedList<>();",
+      "codeType": "VARIABLE_DECLARATION_STATEMENT",
+      "level": "METHOD_LEVEL",
+      "type": "CODE_ADDITION"
+   },
+   {
+      "affectedMethod": "<init>()V",
+      "class": "thisPackageOfMine.TestClass",
+      "codeAdded": "l.add(s);",
+      "codeType": "METHOD_INVOCATION",
+      "level": "METHOD_LEVEL",
+      "type": "CODE_ADDITION"
+   },
+   {
+      "affectedMethod": "<init>()V",
+      "class": "thisPackageOfMine.TestClass",
+      "codeAdded": "myOtherStringList = new ArrayList<String>();",
+      "codeType": "ASSIGNMENT",
+      "level": "METHOD_LEVEL",
+      "type": "CODE_ADDITION"
+   },
+   {
+      "affectedMethod": "<init>(Ljava/util/List;I)V",
+      "class": "thisPackageOfMine.TestClass",
+      "codeAdded": "myOtherStringList = null;",
+      "codeType": "ASSIGNMENT",
+      "level": "METHOD_LEVEL",
+      "type": "CODE_ADDITION"
+   },
+   {
+      "affectedMethod": "<init>(Ljava/util/List;I)V",
+      "class": "thisPackageOfMine.TestClass",
+      "codeAdded": "l",
+      "codeType": "PARAMETER",
+      "level": "CLASS_LEVEL",
+      "type": "CODE_ADDITION"
+   },
+   {
+      "affectedMethod": "<init>(Ljava/util/List;I)V",
+      "class": "thisPackageOfMine.TestClass",
+      "codeAdded": "stringList.add(l);",
+      "codeType": "METHOD_INVOCATION",
+      "level": "METHOD_LEVEL",
+      "type": "CODE_ADDITION"
+   }
+]

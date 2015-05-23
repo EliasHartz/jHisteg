@@ -1,0 +1,157 @@
+[
+   {
+      "partOfSource": false,
+      "pathInRepo": ".git/COMMIT_EDITMSG",
+      "type": "ADDED"
+   },
+   {
+      "partOfSource": false,
+      "pathInRepo": ".git/config",
+      "type": "ADDED"
+   },
+   {
+      "partOfSource": false,
+      "pathInRepo": ".git/hooks/pre-push.sample",
+      "type": "ADDED"
+   },
+   {
+      "partOfSource": false,
+      "pathInRepo": ".git/hooks/pre-commit.sample",
+      "type": "ADDED"
+   },
+   {
+      "partOfSource": false,
+      "pathInRepo": ".git/hooks/pre-rebase.sample",
+      "type": "ADDED"
+   },
+   {
+      "partOfSource": false,
+      "pathInRepo": ".git/hooks/commit-msg.sample",
+      "type": "ADDED"
+   },
+   {
+      "partOfSource": false,
+      "pathInRepo": ".git/hooks/applypatch-msg.sample",
+      "type": "ADDED"
+   },
+   {
+      "partOfSource": false,
+      "pathInRepo": ".git/hooks/pre-applypatch.sample",
+      "type": "ADDED"
+   },
+   {
+      "partOfSource": false,
+      "pathInRepo": ".git/hooks/post-update.sample",
+      "type": "ADDED"
+   },
+   {
+      "partOfSource": false,
+      "pathInRepo": ".git/hooks/update.sample",
+      "type": "ADDED"
+   },
+   {
+      "partOfSource": false,
+      "pathInRepo": ".git/hooks/prepare-commit-msg.sample",
+      "type": "ADDED"
+   },
+   {
+      "partOfSource": false,
+      "pathInRepo": ".git/objects/b7/b66f0e216efa6dc8129d4d821b4d80cc95e0a0",
+      "type": "ADDED"
+   },
+   {
+      "partOfSource": false,
+      "pathInRepo": ".git/objects/57/3119171c48a1a9cc90da178fb4ee5be1494e18",
+      "type": "ADDED"
+   },
+   {
+      "partOfSource": false,
+      "pathInRepo": ".git/objects/f9/224d862fdb473f53074dd079f8669b7b25f04f",
+      "type": "ADDED"
+   },
+   {
+      "partOfSource": false,
+      "pathInRepo": ".git/objects/3a/26fa947db3ccbf341d3de4702d040250223f29",
+      "type": "ADDED"
+   },
+   {
+      "partOfSource": false,
+      "pathInRepo": ".git/objects/f2/96bad0399b497bd501dc6fbb5e414e63bda6bf",
+      "type": "ADDED"
+   },
+   {
+      "partOfSource": false,
+      "pathInRepo": ".git/objects/21/89a143aeb3884ae451eec1bb6ea71d4391053c",
+      "type": "ADDED"
+   },
+   {
+      "partOfSource": false,
+      "pathInRepo": ".git/objects/02/9f8c91b50f950694168cc7ad5b0a77b44e10c1",
+      "type": "ADDED"
+   },
+   {
+      "partOfSource": false,
+      "pathInRepo": ".git/objects/9e/2be64ae54135394b501c06c590585988b0509a",
+      "type": "ADDED"
+   },
+   {
+      "partOfSource": false,
+      "pathInRepo": ".git/objects/07/492ff26e3db7648ff71caab8e5f96b3153a16d",
+      "type": "ADDED"
+   },
+   {
+      "partOfSource": false,
+      "pathInRepo": ".git/objects/d7/b34b8cdafaada210ae7e863c8b5d27aded1cea",
+      "type": "ADDED"
+   },
+   {
+      "partOfSource": false,
+      "pathInRepo": ".git/objects/63/05611b24ce5567293ef96795b16a627c90c698",
+      "type": "ADDED"
+   },
+   {
+      "partOfSource": false,
+      "pathInRepo": ".git/description",
+      "type": "ADDED"
+   },
+   {
+      "partOfSource": false,
+      "pathInRepo": ".git/index",
+      "type": "ADDED"
+   },
+   {
+      "partOfSource": false,
+      "pathInRepo": ".git/info/exclude",
+      "type": "ADDED"
+   },
+   {
+      "partOfSource": false,
+      "pathInRepo": ".git/logs/HEAD",
+      "type": "ADDED"
+   },
+   {
+      "partOfSource": false,
+      "pathInRepo": ".git/logs/refs/heads/master",
+      "type": "ADDED"
+   },
+   {
+      "partOfSource": false,
+      "pathInRepo": ".git/HEAD",
+      "type": "ADDED"
+   },
+   {
+      "partOfSource": false,
+      "pathInRepo": ".git/refs/heads/master",
+      "type": "ADDED"
+   },
+   {
+      "partOfSource": true,
+      "pathInRepo": "src/thisPackageOfMine/TestClass.java",
+      "type": "ADDED"
+   },
+   {
+      "partOfSource": false,
+      "pathInRepo": "build.xml",
+      "type": "ADDED"
+   }
+]

@@ -1,0 +1,7 @@
+This is a compiled fork of ChangeDistiller by Beat Fluri, Harald C. Gall, Michael Würsch and Martin Pinzger modified
+to use Java7 as default language level and including additional tests. The code can be found inside this repositories
+'misc' folder.
+
+ChangeDistiller is open source, available under the Apache 2.0 License (http://www.apache.org/licenses/LICENSE-2.0)
+Please cite "Change Distilling: Tree Differencing for fine-grained Source Code Change Extraction" by
+Beat Fluri, Michael Würsch, Martin Pinzger and Harald Gall. IEEE Trans. Software Eng., 33(11):725–743, 2007.

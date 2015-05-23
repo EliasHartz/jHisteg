@@ -1,0 +1,16 @@
+[
+   {
+      "class": "thisPackageOfMine.ChildOfTestClass$MyInnerClass",
+      "codeType": "CLASS",
+      "level": "CLASS_LEVEL",
+      "type": "NEW_CLASS"
+   },
+   {
+      "affectedMethod": "<init>(Ljava/lang/String;I)V",
+      "class": "thisPackageOfMine.TestClass",
+      "codeAdded": "TestClass(String,int)",
+      "codeType": "METHOD",
+      "level": "CLASS_LEVEL",
+      "type": "CODE_ADDITION"
+   }
+]

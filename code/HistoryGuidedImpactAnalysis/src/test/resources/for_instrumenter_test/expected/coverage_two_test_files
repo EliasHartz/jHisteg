@@ -1,0 +1,107 @@
+{
+   "executionTraces": [
+      {
+         "called": "tests.SomeMinimalTest.<init>()V",
+         "calledWithParameters": [],
+         "returned": {
+            "class": "---",
+            "stringRepresentation": "void"
+         },
+         "trace": [
+            "[0]> ALOAD",
+            "[1]> INVOKESPECIAL",
+            "[2]> RETURN"
+         ],
+         "type": "CONSTRUCTOR"
+      },
+      {
+         "called": "tests.SomeMinimalTest.unitTest()V",
+         "calledWithParameters": [],
+         "returned": {
+            "class": "---",
+            "stringRepresentation": "void"
+         },
+         "trace": [
+            "[0]> SIPUSH",
+            "[1]> INVOKESTATIC",
+            {
+               "called": "mainPackage.SomeClass.echoAnInt(I)I",
+               "calledWithParameters": [{
+                  "class": "int",
+                  "value": "12345"
+               }],
+               "returned": {
+                  "class": "int",
+                  "value": "12345"
+               },
+               "trace": [
+                  "[0]> ILOAD",
+                  "[1]> IRETURN"
+               ],
+               "trace (line numbers)": ["Line 99"],
+               "type": "METHOD"
+            },
+            "[2]> SIPUSH",
+            "[3]> IF_ICMPNE",
+            "[4]> ICONST_1",
+            "[5]> GOTO",
+            "[7]> INVOKESTATIC",
+            "[8]> RETURN"
+         ],
+         "trace (line numbers)": ["{{mainPackage.SomeClass.echoAnInt(I)I}}"],
+         "type": "METHOD"
+      },
+      {
+         "called": "tests.AnotherMinimalTest.<init>()V",
+         "calledWithParameters": [],
+         "returned": {
+            "class": "---",
+            "stringRepresentation": "void"
+         },
+         "trace": [
+            "[0]> ALOAD",
+            "[1]> INVOKESPECIAL",
+            "[2]> RETURN"
+         ],
+         "type": "CONSTRUCTOR"
+      },
+      {
+         "called": "tests.AnotherMinimalTest.unitTest()V",
+         "calledWithParameters": [],
+         "returned": {
+            "class": "---",
+            "stringRepresentation": "void"
+         },
+         "trace": [
+            "[0]> ICONST_1",
+            "[1]> INVOKESTATIC",
+            {
+               "called": "mainPackage.SomeClass.echoABool(Z)Z",
+               "calledWithParameters": [{
+                  "class": "boolean",
+                  "value": "true"
+               }],
+               "returned": {
+                  "class": "boolean",
+                  "value": "true"
+               },
+               "trace": [
+                  "[0]> ILOAD",
+                  "[1]> IRETURN"
+               ],
+               "trace (line numbers)": ["Line 103"],
+               "type": "METHOD"
+            },
+            "[2]> ICONST_1",
+            "[3]> IF_ICMPNE",
+            "[4]> ICONST_1",
+            "[5]> GOTO",
+            "[7]> INVOKESTATIC",
+            "[8]> RETURN"
+         ],
+         "trace (line numbers)": ["{{mainPackage.SomeClass.echoABool(Z)Z}}"],
+         "type": "METHOD"
+      }
+   ],
+   "errors": []
+}

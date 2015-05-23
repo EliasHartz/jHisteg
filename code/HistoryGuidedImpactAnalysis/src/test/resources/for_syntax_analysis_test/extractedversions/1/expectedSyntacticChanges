@@ -1,0 +1,51 @@
+[
+   {
+      "affectedMethod": "main([Ljava/lang/String;)V",
+      "class": "thisPackageOfMine.TestClass",
+      "codeRemoved": "TestClass.setTheStaticBoolean(false);",
+      "codeType": "METHOD_INVOCATION",
+      "level": "METHOD_LEVEL",
+      "type": "CODE_REMOVAL"
+   },
+   {
+      "affectedMethod": "myMethod(Ljava/lang/String;Ljava/lang/String;)V",
+      "class": "thisPackageOfMine.TestClass",
+      "codeAdded": "blub2",
+      "codeType": "PARAMETER",
+      "level": "CLASS_LEVEL",
+      "type": "CODE_ADDITION"
+   },
+   {
+      "affectedMethod": "myMethod(Ljava/lang/String;Ljava/lang/String;)V",
+      "class": "thisPackageOfMine.TestClass",
+      "code": "System.out.println(((\"BLUB: \" + blub) + blub2));",
+      "codeBefore": "System.out.println((\"BLUB: \" + blub));",
+      "codeType": "METHOD_INVOCATION",
+      "level": "METHOD_LEVEL",
+      "type": "CODE_MODIFICATION"
+   },
+   {
+      "class": "thisPackageOfMine.TestClass",
+      "codeAdded": "String anotherString",
+      "codeType": "FIELD",
+      "level": "CLASS_LEVEL",
+      "type": "CODE_ADDITION"
+   },
+   {
+      "affectedMethod": "<init>()V",
+      "class": "thisPackageOfMine.TestClass",
+      "codeAdded": "anotherString = \"main class\";",
+      "codeType": "ASSIGNMENT",
+      "level": "METHOD_LEVEL",
+      "type": "CODE_ADDITION"
+   },
+   {
+      "affectedMethod": "setTheStaticBoolean(Z)V",
+      "class": "thisPackageOfMine.TestClass",
+      "code": "protected",
+      "codeBefore": "public",
+      "codeType": "MODIFIER",
+      "level": "CLASS_LEVEL",
+      "type": "CODE_MODIFICATION"
+   }
+]

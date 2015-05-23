@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>hartz.masterThesis.historyGuidedImpactAnalysis</groupId>
+    <artifactId>jHisteg</artifactId>
+    <version>1.0</version>
+
+    <name>jHisteg</name>
+    <description>Generates Testing Targets based on user modifications between versions of a project and ranks them by impact</description>
+    <inceptionYear>2014/15</inceptionYear>
+
+    <!-- #########################################################################################################################
+         Since our test resources contain again sources (and tests) because we work on other projects, the maven-surefire plug-in
+         has a few problems. We solve this by stating EXACTLY which tests to execute. This necessitates of course that we manually
+         add every new test to the list below.
+      -->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.18.1</version>
+                <configuration>
+                    <includes>
+                        <include>**/ConfigTest.java</include>
+                        <include>**/ExtractionTest.java</include>
+                        <include>**/FullComputationTest.java</include>
+                        <include>**/InstrumenterTest.java</include>
+                        <include>**/JUnitRunnerTest.java</include>
+                        <include>**/MavenTest.java</include>
+                        <include>**/SyntaxChangeComputationTest.java</include>
+                        <include>**/TraceComparisonTest.java</include>
+                        <include>**/TraceGenerationTest.java</include>
+                        <include>**/CallGraphTest.java</include>
+
+                        <!-- this last test depends on external repos not under my control, disable it if those repos break down -->
+                        <include>**/VolatileExtractionTest.java</include>
+                    </includes>
+                </configuration>
+            </plugin>
+
+            <!-- This allows to create a release-build with no debug flags-->
+            <!--
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.2</version>
+                <configuration>
+                    <debug>false</debug>
+                    <debuglevel>none</debuglevel>
+                </configuration>
+            </plugin>
+            -->
+
+            <plugin>
+		<groupId>org.apache.maven.plugins</groupId>
+		<artifactId>maven-compiler-plugin</artifactId>
+		<version>3.2</version>
+		<configuration>
+		  <source>1.7</source>
+		  <target>1.7</target>
+		</configuration>
+	    </plugin>
+
+
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>hartz.masterThesis.historyGuidedImpactAnalysis.main.Tool</mainClass>
+                        </manifest>
+                    </archive>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+
+        </plugins>
+    </build>
+
+
+
+    <!-- #########################################################################################################################
+     This is our list of versions for all our libraries, allowing us for easier management regarding upgrades! Note that
+     ChangeDistiller has been put into a local repository as it is not under maven-versioning :-(
+    -->
+
+    <properties>
+        <asm.version>5.0.3</asm.version>
+        <junit.version>4.11</junit.version>
+
+        <!-- this is a Java 7 program -->
+        <maven.compiler.target>1.7</maven.compiler.target>
+        <maven.compiler.source>1.7</maven.compiler.source>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>lib_changedistiller</id>
+            <url>file://${project.basedir}/lib_changedistiller</url>
+        </repository>
+    </repositories>
+
+
+
+    <!-- #########################################################################################################################
+         Actual and full list of dependencies for this program :-) Keep in alphabetical order please!
+      -->
+
+    <dependencies>
+        <!-- ASM Bytecode Instrumentation Framework -->
+        <dependency>
+            <groupId>org.ow2.asm</groupId>
+            <artifactId>asm</artifactId>
+            <version>${asm.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.ow2.asm</groupId>
+            <artifactId>asm-commons</artifactId>
+            <version>${asm.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.ow2.asm</groupId>
+            <artifactId>asm-util</artifactId>
+            <version>${asm.version}</version>
+        </dependency>
+
+        <!-- ChangeDistiller has been installed as a local repo since it is not under maven-versioning! -->
+        <dependency>
+            <groupId>changedistiller</groupId>
+            <artifactId>changedistiller</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <!-- JUnit for testing and running tests-->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+        </dependency>
+
+    </dependencies>
+
+</project>

@@ -1,0 +1,12 @@
+[
+   {
+      "partOfSource": true,
+      "pathInRepo": "src/thisPackageOfMine/ChildOfTestClass.java",
+      "type": "ADDED"
+   },
+   {
+      "partOfSource": true,
+      "pathInRepo": "src/thisPackageOfMine/TestClass.java",
+      "type": "MODIFIED"
+   }
+]

@@ -1,0 +1,77 @@
+[
+   {
+      "class": "thisPackageOfMine.MyOtherClass",
+      "codeRemoved": "thisPackageOfMine.MyOtherClass.desc : String",
+      "codeType": "MODIFIER",
+      "level": "CLASS_LEVEL",
+      "type": "CODE_REMOVAL"
+   },
+   {
+      "affectedMethod": "printSomethingOther()V",
+      "class": "thisPackageOfMine.MyOtherClass",
+      "code": "protected",
+      "codeBefore": "public",
+      "codeType": "MODIFIER",
+      "level": "CLASS_LEVEL",
+      "type": "CODE_MODIFICATION"
+   },
+   {
+      "affectedMethod": "<init>()V",
+      "class": "thisPackageOfMine.TestClass",
+      "codeRemoved": "anotherString = \"main class\";",
+      "codeType": "ASSIGNMENT",
+      "level": "METHOD_LEVEL",
+      "type": "CODE_REMOVAL"
+   },
+   {
+      "affectedMethod": "setTheStaticBoolean(Z)V",
+      "class": "thisPackageOfMine.TestClass",
+      "code": "someStaticBoolean = b;",
+      "codeBefore": "TestClass.someStaticBoolean = b;",
+      "codeType": "ASSIGNMENT",
+      "level": "METHOD_LEVEL",
+      "type": "CODE_MODIFICATION"
+   },
+   {
+      "affectedMethod": "<init>()V",
+      "class": "thisPackageOfMine.TestClass",
+      "code": "(someStaticBoolean && (anotherString.length() > 5))",
+      "codeBefore": "TestClass.someStaticBoolean",
+      "codeType": "IF_STATEMENT",
+      "level": "METHOD_LEVEL",
+      "type": "CODE_MODIFICATION"
+   },
+   {
+      "affectedMethod": "<init>()V",
+      "class": "thisPackageOfMine.TestClass",
+      "code": "Runnable r = new Runnable() {\n  public @Override void run() {\n    int i = 0;\n    while ((i < 5))      System.out.println(((anotherString + \" \") + (++ i)));\n  }\n};",
+      "codeBefore": "Runnable r = new Runnable() {\n  public @Override void run() {\n    int i = 0;\n    while ((i < 10))      System.out.println(((anotherString + \" \") + (++ i)));\n  }\n};",
+      "codeType": "VARIABLE_DECLARATION_STATEMENT",
+      "level": "METHOD_LEVEL",
+      "type": "CODE_MODIFICATION"
+   },
+   {
+      "affectedMethod": "main([Ljava/lang/String;)V",
+      "class": "thisPackageOfMine.TestClass",
+      "codeAdded": "new IllegalArgumentException(\"BLUB\");",
+      "codeType": "THROW_STATEMENT",
+      "level": "METHOD_LEVEL",
+      "type": "CODE_ADDITION"
+   },
+   {
+      "affectedMethod": "main([Ljava/lang/String;)V",
+      "class": "thisPackageOfMine.TestClass",
+      "codeRemoved": "System.out.println(\"Hello World\");",
+      "codeType": "METHOD_INVOCATION",
+      "level": "METHOD_LEVEL",
+      "type": "CODE_REMOVAL"
+   },
+   {
+      "affectedMethod": "<init>(Ljava/lang/String;I)V",
+      "class": "thisPackageOfMine.TestClass",
+      "codeRemoved": "anotherString = ((\"value given to constructor was \\'\" + s) + \"\\'\");",
+      "codeType": "ASSIGNMENT",
+      "level": "METHOD_LEVEL",
+      "type": "CODE_REMOVAL"
+   }
+]

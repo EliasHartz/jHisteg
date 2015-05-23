@@ -1,0 +1,117 @@
+{
+   "executionTraces": [
+      {
+         "called": "mainPackage.ReallyEvilInnerClassCase.<clinit>()V",
+         "calledWithParameters": [],
+         "returned": {
+            "class": "---",
+            "stringRepresentation": "void"
+         },
+         "trace": [
+            "[0]> NEW",
+            "[1]> DUP",
+            "[2]> INVOKESPECIAL",
+            {
+               "called": "mainPackage.ReallyEvilInnerClassCase$1.<init>()V",
+               "calledWithParameters": [],
+               "returned": {
+                  "class": "---",
+                  "stringRepresentation": "void"
+               },
+               "trace": [
+                  "[0]> ALOAD",
+                  "[1]> INVOKESPECIAL",
+                  {
+                     "called": "mainPackage.ReallyEvilInnerClassCase.<init>()V",
+                     "calledWithParameters": [],
+                     "returned": {
+                        "class": "---",
+                        "stringRepresentation": "void"
+                     },
+                     "trace": [
+                        "[0]> ALOAD",
+                        "[1]> INVOKESPECIAL",
+                        "[2]> RETURN"
+                     ],
+                     "trace (line numbers)": ["Line 3"],
+                     "type": "CONSTRUCTOR"
+                  },
+                  "[2]> RETURN"
+               ],
+               "trace (line numbers)": [
+                  "Line 8",
+                  "{{mainPackage.ReallyEvilInnerClassCase.<init>()V}}",
+                  "Line 8"
+               ],
+               "type": "CONSTRUCTOR"
+            },
+            "[3]> PUTSTATIC",
+            "[4]> RETURN"
+         ],
+         "trace (line numbers)": [
+            "Line 8",
+            "{{mainPackage.ReallyEvilInnerClassCase$1.<init>()V}}",
+            "Line 8"
+         ],
+         "type": "METHOD"
+      },
+      {
+         "called": "mainPackage.ReallyEvilInnerClassCase$1.getValue()I",
+         "calledWithParameters": [],
+         "returned": {
+            "class": "int",
+            "value": "-1"
+         },
+         "trace": [
+            "[0]> ICONST_M1",
+            "[1]> IRETURN"
+         ],
+         "trace (line numbers)": ["Line 10"],
+         "type": "METHOD"
+      },
+      {
+         "called": "mainPackage.ReallyEvilInnerClassCase.<init>()V",
+         "calledWithParameters": [],
+         "returned": {
+            "class": "---",
+            "stringRepresentation": "void"
+         },
+         "trace": [
+            "[0]> ALOAD",
+            "[1]> INVOKESPECIAL",
+            "[2]> RETURN"
+         ],
+         "trace (line numbers)": ["Line 3"],
+         "type": "CONSTRUCTOR"
+      },
+      {
+         "called": "mainPackage.ReallyEvilInnerClassCase.getValue()I",
+         "calledWithParameters": [],
+         "returned": {
+            "class": "int",
+            "value": "1"
+         },
+         "trace": [
+            "[0]> ICONST_1",
+            "[1]> IRETURN"
+         ],
+         "trace (line numbers)": ["Line 6"],
+         "type": "METHOD"
+      },
+      {
+         "called": "mainPackage.ReallyEvilInnerClassCase$1.getValue()I",
+         "calledWithParameters": [],
+         "returned": {
+            "class": "int",
+            "value": "-1"
+         },
+         "trace": [
+            "[0]> ICONST_M1",
+            "[1]> IRETURN"
+         ],
+         "trace (line numbers)": ["Line 10"],
+         "type": "METHOD"
+      }
+   ],
+   "errors": []
+}

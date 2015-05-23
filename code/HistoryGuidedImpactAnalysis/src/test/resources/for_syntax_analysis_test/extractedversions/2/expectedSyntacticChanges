@@ -1,0 +1,23 @@
+[
+   {
+      "class": "thisPackageOfMine.ChildOfTestClass",
+      "codeType": "CLASS",
+      "level": "CLASS_LEVEL",
+      "type": "NEW_CLASS"
+   },
+   {
+      "affectedMethod": "myMethod(Ljava/lang/String;Ljava/lang/String;)V",
+      "class": "thisPackageOfMine.TestClass",
+      "codeRemoved": "myMethod(String,String)",
+      "codeType": "METHOD",
+      "level": "CLASS_LEVEL",
+      "type": "CODE_REMOVAL"
+   },
+   {
+      "class": "thisPackageOfMine.TestClass",
+      "code": "thisPackageOfMine.TestClass.s : String",
+      "codeType": "MODIFIER",
+      "level": "CLASS_LEVEL",
+      "type": "CODE_MODIFICATION"
+   }
+]

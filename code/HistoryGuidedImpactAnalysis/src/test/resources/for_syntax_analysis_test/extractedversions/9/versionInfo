@@ -1,0 +1,19 @@
+{
+   "author": "Elias Hartz",
+   "buildLocation": "/home/elias/Documents/jmutops-mining/code/HistoryGuidedImpactAnalysis/./testResources/forSyntaxAnalysisTest/extractedVersions/8/version",
+   "commandToBuild": "compile",
+   "compiledSourcesIn": "/home/elias/Documents/jmutops-mining/code/HistoryGuidedImpactAnalysis/./testResources/forSyntaxAnalysisTest/extractedVersions/8/version/build",
+   "date": "Thu Dec 4 14:16:20 2014 +0100",
+   "identifier": "ba5093b7d3e6d1746b66b6db5ce764d37ca0e2d9",
+   "ignoredClassesByPrefix": [],
+   "ignoredClassesBySuffix": [],
+   "ignoredMethodsBySignature": [
+      "toString()Ljava/lang/String;",
+      "hashCode()I",
+      "equals(Ljava/lang/Object;)Z"
+   ],
+   "index": 9,
+   "msg": "THIS IS A FACTUALLY INCORRECT MESSAGE BUT WE DO NOT MATCH THE MESSAGE :-)",
+   "comparingAgainstVersion": "31402c893b7d3e6d1746b6db5ce764d37ca0e2d9",
+   "sourcesIn": "/home/elias/Documents/jmutops-mining/code/HistoryGuidedImpactAnalysis/./testResources/forSyntaxAnalysisTest/extractedVersions/8/version/src"
+}

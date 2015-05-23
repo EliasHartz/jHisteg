@@ -1,0 +1,658 @@
+{
+   "executionTraces": [
+      {
+         "called": "tests.SingleThreadedTest.<init>()V",
+         "calledWithParameters": [],
+         "returned": {
+            "class": "---",
+            "stringRepresentation": "void"
+         },
+         "trace": [
+            "[0]> ALOAD",
+            "[1]> INVOKESPECIAL",
+            "[2]> RETURN"
+         ],
+         "type": "CONSTRUCTOR"
+      },
+      {
+         "called": "tests.SingleThreadedTest.unitTest()V",
+         "calledWithParameters": [],
+         "returned": {
+            "class": "---",
+            "stringRepresentation": "void"
+         },
+         "trace": [
+            "[0]> NEW",
+            "[1]> DUP",
+            "[2]> INVOKESPECIAL",
+            {
+               "called": "mainPackage.SomeClass.<init>()V",
+               "calledWithParameters": [],
+               "returned": {
+                  "class": "---",
+                  "stringRepresentation": "void"
+               },
+               "trace": [
+                  "[0]> ALOAD",
+                  "[1]> INVOKESPECIAL",
+                  "[2]> ALOAD",
+                  "[3]> LDC",
+                  "[4]> PUTFIELD",
+                  "[5]> ALOAD",
+                  "[6]> ICONST_1",
+                  "[7]> PUTFIELD",
+                  "[8]> ALOAD",
+                  "[9]> BIPUSH",
+                  "[10]> PUTFIELD",
+                  "[11]> ALOAD",
+                  "[12]> BIPUSH",
+                  "[13]> PUTFIELD",
+                  "[14]> ALOAD",
+                  "[15]> BIPUSH",
+                  "[16]> PUTFIELD",
+                  "[17]> ALOAD",
+                  "[18]> BIPUSH",
+                  "[19]> PUTFIELD",
+                  "[20]> ALOAD",
+                  "[21]> LDC",
+                  "[22]> PUTFIELD",
+                  "[23]> ALOAD",
+                  "[24]> LDC",
+                  "[25]> PUTFIELD",
+                  "[26]> ALOAD",
+                  "[27]> LDC",
+                  "[28]> PUTFIELD",
+                  "[29]> RETURN"
+               ],
+               "trace (line numbers)": [
+                  "Line 18",
+                  "Line 19",
+                  "Line 20",
+                  "Line 21",
+                  "Line 22",
+                  "Line 23",
+                  "Line 24",
+                  "Line 25",
+                  "Line 26",
+                  "Line 27",
+                  "Line 28"
+               ],
+               "type": "CONSTRUCTOR"
+            },
+            "[3]> ASTORE",
+            "[4]> ALOAD",
+            "[5]> INVOKEVIRTUAL",
+            {
+               "called": "mainPackage.SomeClass.getBoolean()Z",
+               "calledWithParameters": [],
+               "returned": {
+                  "class": "boolean",
+                  "value": "true"
+               },
+               "trace": [
+                  "[0]> ALOAD",
+                  "[1]> GETFIELD",
+                  "[2]> IRETURN"
+               ],
+               "trace (line numbers)": ["Line 54"],
+               "type": "METHOD"
+            },
+            "[6]> INVOKESTATIC",
+            "[7]> ALOAD",
+            "[8]> INVOKEVIRTUAL",
+            {
+               "called": "mainPackage.SomeClass.getShort()S",
+               "calledWithParameters": [],
+               "returned": {
+                  "class": "short",
+                  "value": "42"
+               },
+               "trace": [
+                  "[0]> ALOAD",
+                  "[1]> GETFIELD",
+                  "[2]> IRETURN"
+               ],
+               "trace (line numbers)": ["Line 58"],
+               "type": "METHOD"
+            },
+            "[9]> BIPUSH",
+            "[10]> IF_ICMPNE",
+            "[11]> ICONST_1",
+            "[12]> GOTO",
+            "[14]> INVOKESTATIC",
+            "[15]> ALOAD",
+            "[16]> INVOKEVIRTUAL",
+            {
+               "called": "mainPackage.SomeClass.getByte()B",
+               "calledWithParameters": [],
+               "returned": {
+                  "class": "byte",
+                  "value": "42"
+               },
+               "trace": [
+                  "[0]> ALOAD",
+                  "[1]> GETFIELD",
+                  "[2]> IRETURN"
+               ],
+               "trace (line numbers)": ["Line 62"],
+               "type": "METHOD"
+            },
+            "[17]> BIPUSH",
+            "[18]> IF_ICMPNE",
+            "[19]> ICONST_1",
+            "[20]> GOTO",
+            "[22]> INVOKESTATIC",
+            "[23]> SIPUSH",
+            "[24]> INVOKESTATIC",
+            {
+               "called": "mainPackage.SomeClass.echoAnInt(I)I",
+               "calledWithParameters": [{
+                  "class": "int",
+                  "value": "-726"
+               }],
+               "returned": {
+                  "class": "int",
+                  "value": "-726"
+               },
+               "trace": [
+                  "[0]> ILOAD",
+                  "[1]> IRETURN"
+               ],
+               "trace (line numbers)": ["Line 99"],
+               "type": "METHOD"
+            },
+            "[25]> BIPUSH",
+            "[26]> IF_ICMPEQ",
+            "[27]> ICONST_1",
+            "[28]> GOTO",
+            "[30]> INVOKESTATIC",
+            "[31]> ALOAD",
+            "[32]> POP",
+            "[33]> BIPUSH",
+            "[34]> INVOKESTATIC",
+            {
+               "called": "mainPackage.SomeClass.echoAnInt(I)I",
+               "calledWithParameters": [{
+                  "class": "int",
+                  "value": "123"
+               }],
+               "returned": {
+                  "class": "int",
+                  "value": "123"
+               },
+               "trace": [
+                  "[0]> ILOAD",
+                  "[1]> IRETURN"
+               ],
+               "trace (line numbers)": ["Line 99"],
+               "type": "METHOD"
+            },
+            "[35]> BIPUSH",
+            "[36]> IF_ICMPNE",
+            "[37]> ICONST_1",
+            "[38]> GOTO",
+            "[40]> INVOKESTATIC",
+            "[41]> ALOAD",
+            "[42]> INVOKEVIRTUAL",
+            {
+               "called": "mainPackage.SomeClass.getChar()C",
+               "calledWithParameters": [],
+               "returned": {
+                  "class": "char",
+                  "value": "c"
+               },
+               "trace": [
+                  "[0]> ALOAD",
+                  "[1]> GETFIELD",
+                  "[2]> IRETURN"
+               ],
+               "trace (line numbers)": ["Line 66"],
+               "type": "METHOD"
+            },
+            "[43]> BIPUSH",
+            "[44]> IF_ICMPNE",
+            "[45]> ICONST_1",
+            "[46]> GOTO",
+            "[48]> INVOKESTATIC",
+            "[49]> ALOAD",
+            "[50]> INVOKEVIRTUAL",
+            {
+               "called": "mainPackage.SomeClass.getInteger()I",
+               "calledWithParameters": [],
+               "returned": {
+                  "class": "int",
+                  "value": "42"
+               },
+               "trace": [
+                  "[0]> ALOAD",
+                  "[1]> GETFIELD",
+                  "[2]> IRETURN"
+               ],
+               "trace (line numbers)": ["Line 70"],
+               "type": "METHOD"
+            },
+            "[51]> BIPUSH",
+            "[52]> IF_ICMPNE",
+            "[53]> ICONST_1",
+            "[54]> GOTO",
+            "[56]> INVOKESTATIC",
+            "[57]> ALOAD",
+            "[58]> INVOKEVIRTUAL",
+            {
+               "called": "mainPackage.SomeClass.getLong()J",
+               "calledWithParameters": [],
+               "returned": {
+                  "class": "long",
+                  "value": "42"
+               },
+               "trace": [
+                  "[0]> ALOAD",
+                  "[1]> GETFIELD",
+                  "[2]> LRETURN"
+               ],
+               "trace (line numbers)": ["Line 74"],
+               "type": "METHOD"
+            },
+            "[59]> LDC",
+            "[60]> LCMP",
+            "[61]> IFNE",
+            "[62]> ICONST_1",
+            "[63]> GOTO",
+            "[65]> INVOKESTATIC",
+            "[66]> ALOAD",
+            "[67]> INVOKEVIRTUAL",
+            {
+               "called": "mainPackage.SomeClass.getDouble()D",
+               "calledWithParameters": [],
+               "returned": {
+                  "class": "double",
+                  "value": "42.0"
+               },
+               "trace": [
+                  "[0]> ALOAD",
+                  "[1]> GETFIELD",
+                  "[2]> DRETURN"
+               ],
+               "trace (line numbers)": ["Line 78"],
+               "type": "METHOD"
+            },
+            "[68]> LDC",
+            "[69]> DCMPL",
+            "[70]> IFNE",
+            "[71]> ICONST_1",
+            "[72]> GOTO",
+            "[74]> INVOKESTATIC",
+            "[75]> ALOAD",
+            "[76]> INVOKEVIRTUAL",
+            {
+               "called": "mainPackage.SomeClass.getFloat()F",
+               "calledWithParameters": [],
+               "returned": {
+                  "class": "float",
+                  "value": "42.0"
+               },
+               "trace": [
+                  "[0]> ALOAD",
+                  "[1]> GETFIELD",
+                  "[2]> FRETURN"
+               ],
+               "trace (line numbers)": ["Line 82"],
+               "type": "METHOD"
+            },
+            "[77]> LDC",
+            "[78]> FCMPL",
+            "[79]> IFNE",
+            "[80]> ICONST_1",
+            "[81]> GOTO",
+            "[83]> INVOKESTATIC",
+            "[84]> ALOAD",
+            "[85]> INVOKEVIRTUAL",
+            {
+               "called": "mainPackage.SomeClass.getString()Ljava/lang/String;",
+               "calledWithParameters": [],
+               "returned": {
+                  "class": "java.lang.String",
+                  "hashCode": 1648779360,
+                  "stringRepresentation": "someStringValueWith42inIt"
+               },
+               "trace": [
+                  "[0]> ALOAD",
+                  "[1]> GETFIELD",
+                  "[2]> ARETURN"
+               ],
+               "trace (line numbers)": ["Line 50"],
+               "type": "METHOD"
+            },
+            "[86]> LDC",
+            "[87]> INVOKEVIRTUAL",
+            "[88]> INVOKESTATIC",
+            "[89]> ALOAD",
+            "[90]> NEW",
+            "[91]> DUP",
+            "[92]> BIPUSH",
+            "[93]> INVOKESPECIAL",
+            {
+               "called": "mainPackage.SomeClass.<init>(I)V",
+               "calledWithParameters": [{
+                  "class": "int",
+                  "value": "41"
+               }],
+               "returned": {
+                  "class": "---",
+                  "stringRepresentation": "void"
+               },
+               "trace": [
+                  "[0]> ALOAD",
+                  "[1]> INVOKESPECIAL",
+                  "[2]> ALOAD",
+                  "[3]> NEW",
+                  "[4]> DUP",
+                  "[5]> INVOKESPECIAL",
+                  "[6]> LDC",
+                  "[7]> INVOKEVIRTUAL",
+                  "[8]> ILOAD",
+                  "[9]> INVOKEVIRTUAL",
+                  "[10]> LDC",
+                  "[11]> INVOKEVIRTUAL",
+                  "[12]> INVOKEVIRTUAL",
+                  "[13]> PUTFIELD",
+                  "[14]> ALOAD",
+                  "[15]> ICONST_0",
+                  "[16]> PUTFIELD",
+                  "[17]> ALOAD",
+                  "[18]> ILOAD",
+                  "[19]> I2C",
+                  "[20]> PUTFIELD",
+                  "[21]> ALOAD",
+                  "[22]> ILOAD",
+                  "[23]> I2S",
+                  "[24]> PUTFIELD",
+                  "[25]> ALOAD",
+                  "[26]> ILOAD",
+                  "[27]> I2B",
+                  "[28]> PUTFIELD",
+                  "[29]> ALOAD",
+                  "[30]> ILOAD",
+                  "[31]> PUTFIELD",
+                  "[32]> ALOAD",
+                  "[33]> ILOAD",
+                  "[34]> I2L",
+                  "[35]> PUTFIELD",
+                  "[36]> ALOAD",
+                  "[37]> ILOAD",
+                  "[38]> I2D",
+                  "[39]> PUTFIELD",
+                  "[40]> ALOAD",
+                  "[41]> ILOAD",
+                  "[42]> I2F",
+                  "[43]> PUTFIELD",
+                  "[44]> RETURN"
+               ],
+               "trace (line numbers)": [
+                  "Line 33",
+                  "Line 34",
+                  "Line 35",
+                  "Line 36",
+                  "Line 37",
+                  "Line 38",
+                  "Line 39",
+                  "Line 40",
+                  "Line 41",
+                  "Line 42",
+                  "Line 43"
+               ],
+               "type": "CONSTRUCTOR"
+            },
+            "[94]> INVOKEVIRTUAL",
+            {
+               "called": "mainPackage.SomeClass.equals(Ljava/lang/Object;)Z",
+               "calledWithParameters": [{
+                  "class": "mainPackage.SomeClass",
+                  "hashCode": -41,
+                  "stringRepresentation": "someStringValueWith41inIt"
+               }],
+               "returned": {
+                  "class": "boolean",
+                  "value": "false"
+               },
+               "trace": [
+                  "[0]> ALOAD",
+                  "[1]> INSTANCEOF",
+                  "[2]> IFEQ",
+                  "[3]> ALOAD",
+                  "[4]> CHECKCAST",
+                  "[5]> INVOKEVIRTUAL",
+                  {
+                     "called": "mainPackage.SomeClass.getInteger()I",
+                     "calledWithParameters": [],
+                     "returned": {
+                        "class": "int",
+                        "value": "41"
+                     },
+                     "trace": [
+                        "[0]> ALOAD",
+                        "[1]> GETFIELD",
+                        "[2]> IRETURN"
+                     ],
+                     "trace (line numbers)": ["Line 70"],
+                     "type": "METHOD"
+                  },
+                  "[6]> ALOAD",
+                  "[7]> GETFIELD",
+                  "[8]> IF_ICMPNE",
+                  "[17]> ICONST_0",
+                  "[18]> IRETURN"
+               ],
+               "trace (line numbers)": [
+                  "Line 118",
+                  "Line 119",
+                  "{{mainPackage.SomeClass.getInteger()I}}",
+                  "Line 119"
+               ],
+               "type": "METHOD"
+            },
+            "[95]> INVOKESTATIC",
+            "[96]> LDC",
+            "[97]> ALOAD",
+            "[98]> ICONST_5",
+            "[99]> INVOKEVIRTUAL",
+            {
+               "called": "mainPackage.SomeClass.recursiveCall(I)I",
+               "calledWithParameters": [{
+                  "class": "int",
+                  "value": "5"
+               }],
+               "returned": {
+                  "class": "int",
+                  "value": "5"
+               },
+               "trace": [
+                  "[0]> ILOAD",
+                  "[1]> IFGT",
+                  "[4]> ALOAD",
+                  "[5]> ILOAD",
+                  "[6]> ICONST_1",
+                  "[7]> ISUB",
+                  "[8]> INVOKEVIRTUAL",
+                  {
+                     "called": "mainPackage.SomeClass.recursiveCall(I)I",
+                     "calledWithParameters": [{
+                        "class": "int",
+                        "value": "4"
+                     }],
+                     "returned": {
+                        "class": "int",
+                        "value": "4"
+                     },
+                     "trace": [
+                        "[0]> ILOAD",
+                        "[1]> IFGT",
+                        "[4]> ALOAD",
+                        "[5]> ILOAD",
+                        "[6]> ICONST_1",
+                        "[7]> ISUB",
+                        "[8]> INVOKEVIRTUAL",
+                        {
+                           "called": "mainPackage.SomeClass.recursiveCall(I)I",
+                           "calledWithParameters": [{
+                              "class": "int",
+                              "value": "3"
+                           }],
+                           "returned": {
+                              "class": "int",
+                              "value": "3"
+                           },
+                           "trace": [
+                              "[0]> ILOAD",
+                              "[1]> IFGT",
+                              "[4]> ALOAD",
+                              "[5]> ILOAD",
+                              "[6]> ICONST_1",
+                              "[7]> ISUB",
+                              "[8]> INVOKEVIRTUAL",
+                              {
+                                 "called": "mainPackage.SomeClass.recursiveCall(I)I",
+                                 "calledWithParameters": [{
+                                    "class": "int",
+                                    "value": "2"
+                                 }],
+                                 "returned": {
+                                    "class": "int",
+                                    "value": "2"
+                                 },
+                                 "trace": [
+                                    "[0]> ILOAD",
+                                    "[1]> IFGT",
+                                    "[4]> ALOAD",
+                                    "[5]> ILOAD",
+                                    "[6]> ICONST_1",
+                                    "[7]> ISUB",
+                                    "[8]> INVOKEVIRTUAL",
+                                    {
+                                       "called": "mainPackage.SomeClass.recursiveCall(I)I",
+                                       "calledWithParameters": [{
+                                          "class": "int",
+                                          "value": "1"
+                                       }],
+                                       "returned": {
+                                          "class": "int",
+                                          "value": "1"
+                                       },
+                                       "trace": [
+                                          "[0]> ILOAD",
+                                          "[1]> IFGT",
+                                          "[4]> ALOAD",
+                                          "[5]> ILOAD",
+                                          "[6]> ICONST_1",
+                                          "[7]> ISUB",
+                                          "[8]> INVOKEVIRTUAL",
+                                          {
+                                             "called": "mainPackage.SomeClass.recursiveCall(I)I",
+                                             "calledWithParameters": [{
+                                                "class": "int",
+                                                "value": "0"
+                                             }],
+                                             "returned": {
+                                                "class": "int",
+                                                "value": "0"
+                                             },
+                                             "trace": [
+                                                "[0]> ILOAD",
+                                                "[1]> IFGT",
+                                                "[2]> ICONST_0",
+                                                "[3]> IRETURN"
+                                             ],
+                                             "trace (line numbers)": ["Line 86"],
+                                             "type": "METHOD"
+                                          },
+                                          "[9]> POP",
+                                          "[10]> ILOAD",
+                                          "[11]> IRETURN"
+                                       ],
+                                       "trace (line numbers)": [
+                                          "Line 86",
+                                          "Line 88",
+                                          "{{mainPackage.SomeClass.recursiveCall(I)I}}",
+                                          "Line 88",
+                                          "Line 89"
+                                       ],
+                                       "type": "METHOD"
+                                    },
+                                    "[9]> POP",
+                                    "[10]> ILOAD",
+                                    "[11]> IRETURN"
+                                 ],
+                                 "trace (line numbers)": [
+                                    "Line 86",
+                                    "Line 88",
+                                    "{{mainPackage.SomeClass.recursiveCall(I)I}}",
+                                    "Line 88",
+                                    "Line 89"
+                                 ],
+                                 "type": "METHOD"
+                              },
+                              "[9]> POP",
+                              "[10]> ILOAD",
+                              "[11]> IRETURN"
+                           ],
+                           "trace (line numbers)": [
+                              "Line 86",
+                              "Line 88",
+                              "{{mainPackage.SomeClass.recursiveCall(I)I}}",
+                              "Line 88",
+                              "Line 89"
+                           ],
+                           "type": "METHOD"
+                        },
+                        "[9]> POP",
+                        "[10]> ILOAD",
+                        "[11]> IRETURN"
+                     ],
+                     "trace (line numbers)": [
+                        "Line 86",
+                        "Line 88",
+                        "{{mainPackage.SomeClass.recursiveCall(I)I}}",
+                        "Line 88",
+                        "Line 89"
+                     ],
+                     "type": "METHOD"
+                  },
+                  "[9]> POP",
+                  "[10]> ILOAD",
+                  "[11]> IRETURN"
+               ],
+               "trace (line numbers)": [
+                  "Line 86",
+                  "Line 88",
+                  "{{mainPackage.SomeClass.recursiveCall(I)I}}",
+                  "Line 88",
+                  "Line 89"
+               ],
+               "type": "METHOD"
+            },
+            "[100]> I2L",
+            "[101]> INVOKESTATIC",
+            "[102]> RETURN"
+         ],
+         "trace (line numbers)": [
+            "{{mainPackage.SomeClass.<init>()V}}",
+            "{{mainPackage.SomeClass.getBoolean()Z}}",
+            "{{mainPackage.SomeClass.getShort()S}}",
+            "{{mainPackage.SomeClass.getByte()B}}",
+            "{{mainPackage.SomeClass.echoAnInt(I)I}}",
+            "{{mainPackage.SomeClass.echoAnInt(I)I}}",
+            "{{mainPackage.SomeClass.getChar()C}}",
+            "{{mainPackage.SomeClass.getInteger()I}}",
+            "{{mainPackage.SomeClass.getLong()J}}",
+            "{{mainPackage.SomeClass.getDouble()D}}",
+            "{{mainPackage.SomeClass.getFloat()F}}",
+            "{{mainPackage.SomeClass.getString()Ljava/lang/String;}}",
+            "{{mainPackage.SomeClass.<init>(I)V}}",
+            "{{mainPackage.SomeClass.equals(Ljava/lang/Object;)Z}}",
+            "{{mainPackage.SomeClass.recursiveCall(I)I}}"
+         ],
+         "type": "METHOD"
+      }
+   ],
+   "errors": []
+}

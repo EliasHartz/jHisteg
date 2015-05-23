@@ -1,0 +1,19 @@
+{
+   "author": "Elias Hartz",
+   "buildLocation": "/home/elias/Documents/jmutops-mining/code/HistoryGuidedImpactAnalysis/./testResources/forSyntaxAnalysisTest/extractedVersions/2/version",
+   "commandToBuild": "compile",
+   "compiledSourcesIn": "/home/elias/Documents/jmutops-mining/code/HistoryGuidedImpactAnalysis/./testResources/forSyntaxAnalysisTest/extractedVersions/2/version/build",
+   "date": "Tue Nov 11 15:39:44 2014 +0100",
+   "identifier": "4c81252a4b93c06db49b45e5b3428714c88a5522",
+   "ignoredClassesByPrefix": [],
+   "ignoredClassesBySuffix": [],
+   "ignoredMethodsBySignature": [
+      "toString()Ljava/lang/String;",
+      "hashCode()I",
+      "equals(Ljava/lang/Object;)Z"
+   ],
+   "index": 2,
+   "msg": "\"added new class, modified field access\"",
+   "comparingAgainstVersion": "07492ff26e3db7648ff71caab8e5f96b3153a16d",
+   "sourcesIn": "/home/elias/Documents/jmutops-mining/code/HistoryGuidedImpactAnalysis/./testResources/forSyntaxAnalysisTest/extractedVersions/2/version/src"
+}

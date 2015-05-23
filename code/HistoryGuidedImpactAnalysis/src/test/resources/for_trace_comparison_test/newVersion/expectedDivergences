@@ -1,0 +1,147 @@
+[
+   {
+         "entryPointOfTrace": "tests.TestSuite2.testSomethingElse()V",
+         "methodsThatDiverged": [
+            {
+               "-> methodWithDivergences": "otherPackage.IhateTheWorld.<init>()V",
+               "callChain": [
+                  "-> otherPackage.IhateTheWorld.<init>()V",
+                  "tests.TestSuite2.testSomethingElse()V"
+               ],
+               "traceDivergences": [
+                  {
+                     "divergenceType": "TRACE_DISTANCE",
+                     "metricValue": 3
+                  },
+                  {
+                     "divergenceType": "TRACE_DIVERGENT_SECTIONS",
+                     "metricValue": 1
+                  }
+               ]
+            },
+            {
+               "-> methodWithDivergences": "mainPackage.HelloWorldMain.say()V",
+               "callChain": [
+                  "-> mainPackage.HelloWorldMain.say()V",
+                  "otherPackage.IhateTheWorld.say()V",
+                  "tests.TestSuite2.testSomethingElse()V"
+               ],
+               "traceDivergences": [
+                  {
+                     "divergenceType": "TRACE_DISTANCE",
+                     "metricValue": 4
+                  },
+                  {
+                     "divergenceType": "TRACE_DIVERGENT_SECTIONS",
+                     "metricValue": 1
+                  }
+               ]
+            }
+         ]
+      },
+   {
+      "entryPointOfTrace": "tests.TestSuite.testHateWorld()V",
+      "methodsThatDiverged": [
+         {
+            "-> methodWithDivergences": "otherPackage.IhateTheWorld.<init>()V",
+            "callChain": [
+               "-> otherPackage.IhateTheWorld.<init>()V",
+               "tests.TestSuite.testHateWorld()V"
+            ],
+            "traceDivergences": [
+               {
+                  "divergenceType": "TRACE_DISTANCE",
+                  "metricValue": 3
+               },
+               {
+                  "divergenceType": "TRACE_DIVERGENT_SECTIONS",
+                  "metricValue": 1
+               },
+               {
+                  "-> methodWithDivergences": "mainPackage.HelloWorldMain.<init>(Ljava/lang/String;)V",
+                  "callChain": [
+                     "-> mainPackage.HelloWorldMain.<init>(Ljava/lang/String;)V",
+                     "otherPackage.IhateTheWorld.<init>()V",
+                     "tests.TestSuite.testHateWorld()V"
+                  ],
+                  "traceDivergences": [
+                     {
+                        "divergenceType": "TRACE_DISTANCE",
+                        "metricValue": 1
+                     },
+                     {
+                        "divergenceType": "TRACE_DIVERGENT_SECTIONS",
+                        "metricValue": 1
+                     },
+                     {
+                        "calledBefore": "---",
+                        "calledNow": "otherPackage.someClass.methodThatIsNotThereInTheOtherTrace()V",
+                        "divergenceType": "ADDITIONAL_METHOD_CALLED"
+                     },
+                     {
+                        "-> methodWithDivergences": "otherPackage.someClass.methodWithDifferentTrace()I",
+                        "callChain": [
+                           "-> otherPackage.someClass.methodWithDifferentTrace()I",
+                           "mainPackage.HelloWorldMain.<init>(Ljava/lang/String;)V",
+                           "otherPackage.IhateTheWorld.<init>()V",
+                           "tests.TestSuite.testHateWorld()V"
+                        ],
+                        "traceDivergences": [
+                           {
+                              "divergenceType": "RETURN_VALUE",
+                              "objectBefore": "int '[43]' hash: -1",
+                              "objectNow": "int '[42]' hash: -1"
+                           },
+                           {
+                              "divergenceType": "TRACE_DISTANCE",
+                              "metricValue": 1
+                           },
+                           {
+                              "divergenceType": "TRACE_DIVERGENT_SECTIONS",
+                              "metricValue": 1
+                           }
+                        ]
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "-> methodWithDivergences": "mainPackage.HelloWorldMain.say()V",
+            "callChain": [
+               "-> mainPackage.HelloWorldMain.say()V",
+               "otherPackage.IhateTheWorld.say()V",
+               "tests.TestSuite.testHateWorld()V"
+            ],
+            "traceDivergences": [
+               {
+                  "divergenceType": "TRACE_DISTANCE",
+                  "metricValue": 4
+               },
+               {
+                  "divergenceType": "TRACE_DIVERGENT_SECTIONS",
+                  "metricValue": 1
+               }
+            ]
+         },
+         {
+            "-> methodWithDivergences": "mainPackage.HelloWorldMain.say()V",
+            "callChain": [
+               "-> mainPackage.HelloWorldMain.say()V",
+               "otherPackage.IhateTheWorld.say()V",
+               "tests.TestSuite.testHateWorld()V"
+            ],
+            "traceDivergences": [
+               {
+                  "divergenceType": "TRACE_DISTANCE",
+                  "metricValue": 4
+               },
+               {
+                  "divergenceType": "TRACE_DIVERGENT_SECTIONS",
+                  "metricValue": 1
+               }
+            ]
+         }
+      ]
+   }
+]

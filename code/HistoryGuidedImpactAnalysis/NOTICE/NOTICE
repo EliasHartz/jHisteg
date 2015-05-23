@@ -1,0 +1,25 @@
+"jHisteg" was conceived by Elias Hartz from 2014 to 2015 as part of his Master Thesis at the 
+Software Engineering Chair (Prof. Zeller) at Saarland University, 66123 Saarbrücken, Germany.
+It is released under Apache License 2.0 (see http://www.apache.org/licenses/LICENSE-2.0.html).
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING
+BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+Attribution notices: 
+- you must indicate that you use have used "jHisteg" or parts thereof or that your software is
+  derived from "jHisteg" or parts thereof
+- should this be used in an academic context, you must cite Elias' Master Thesis of which a PDF
+  is contained within this repository
+- as per Apache License 2.0, you must include readable, non-compressed copy of this directory
+  with all of its contents
+
+This software uses the "ASM Framework" (http://asm.ow2.org/), you can find its license in the
+'references_licenses' directory. Furthermore, this software uses ChangeDistiller, released
+under Apache License 2.0 as well. We use the standalone version, that is freely available at
+https://bitbucket.org/sealuzh/tools-changedistiller/wiki/Home
+Last but not least, this software uses portions of "JSON in java" (see github page: 
+https://github.com/douglascrockford/JSON-java), by Douglas Crockford. You can find its license
+in the 'references_licenses' directory as weel.

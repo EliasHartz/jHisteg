@@ -1,0 +1,32 @@
+{
+   "called": "myPackage.myClass.myMethod()V",
+   "calledWithParameters": [],
+   "returned": {
+      "class": "---",
+      "stringRepresentation": "void"
+   },
+   "trace": [
+      "[0]> ALOAD",
+      "[1]> INVOKESPECIAL",
+      "[6]> ICONST_1",
+      "[7]> PUTFIELD",
+      "[8]> ALOAD",
+      "[9]> BIPUSH",
+      "[10]> IF_ICMPNE",
+      "[11]> ICONST_1",
+      "[12]> GOTO",
+      "[16]> LDC",
+      "[35]> BIPUSH",
+      "[36]> IF_ICMPNE",
+      "[37]> ICONST_1",
+      "[38]> GOTO",
+      "[36]> IF_ICMPNE",
+      "[37]> ICONST_1",
+      "[38]> GOTO",
+      "[39]> IF_ICMPNE",
+      "[40]> INVOKESTATIC",
+      "[41]> ALOAD",
+      "[42]> RETURN"
+   ],
+   "type": "METHOD"
+}

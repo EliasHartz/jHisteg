@@ -1,0 +1,74 @@
+[
+   {
+      "affectedMethod": "printSomethingInner()V",
+      "class": "thisPackageOfMine.ChildOfTestClass$MyInnerClass",
+      "codeAdded": "printSomethingInner()",
+      "codeType": "METHOD",
+      "level": "CLASS_LEVEL",
+      "type": "CODE_ADDITION"
+   },
+   {
+      "affectedMethod": "printSomethingOther()V",
+      "class": "thisPackageOfMine.MyOtherClass",
+      "codeAdded": "printSomethingOther()",
+      "codeType": "METHOD",
+      "level": "CLASS_LEVEL",
+      "type": "CODE_ADDITION"
+   },
+   {
+      "affectedMethod": "<init>()V",
+      "class": "thisPackageOfMine.TestClass",
+      "codeAdded": "Runnable r = new Runnable() {\n  public @Override void run() {\n    int i = 0;\n    while ((i < 10))      System.out.println(((anotherString + \" \") + (++ i)));\n  }\n};",
+      "codeType": "VARIABLE_DECLARATION_STATEMENT",
+      "level": "METHOD_LEVEL",
+      "type": "CODE_ADDITION"
+   },
+   {
+      "affectedMethod": "<init>()V",
+      "class": "thisPackageOfMine.TestClass",
+      "codeAdded": "Thread t = new Thread(r);",
+      "codeType": "VARIABLE_DECLARATION_STATEMENT",
+      "level": "METHOD_LEVEL",
+      "type": "CODE_ADDITION"
+   },
+   {
+      "affectedMethod": "<init>()V",
+      "class": "thisPackageOfMine.TestClass",
+      "codeAdded": "t.run();",
+      "codeType": "METHOD_INVOCATION",
+      "level": "METHOD_LEVEL",
+      "type": "CODE_ADDITION"
+   },
+   {
+      "affectedMethod": "<init>(Ljava/lang/String;I)V",
+      "class": "thisPackageOfMine.TestClass",
+      "codeRemoved": "anotherString = \"main class (but other constructor)\";",
+      "codeType": "ASSIGNMENT",
+      "level": "METHOD_LEVEL",
+      "type": "CODE_REMOVAL"
+   },
+   {
+      "affectedMethod": "<init>(Ljava/lang/String;I)V",
+      "class": "thisPackageOfMine.TestClass",
+      "codeAdded": "anotherString = ((\"value given to constructor was \\'\" + s) + \"\\'\");",
+      "codeType": "ASSIGNMENT",
+      "level": "METHOD_LEVEL",
+      "type": "CODE_ADDITION"
+   },
+   {
+      "affectedMethod": "getTheStringThatCannotBeChanged()Ljava/lang/String;",
+      "class": "thisPackageOfMine.TestClass",
+      "codeAdded": "getTheStringThatCannotBeChanged()",
+      "codeType": "METHOD",
+      "level": "CLASS_LEVEL",
+      "type": "CODE_ADDITION"
+   },
+   {
+      "affectedMethod": "getS()Ljava/lang/String;",
+      "class": "thisPackageOfMine.TestClass",
+      "codeRemoved": "getS()",
+      "codeType": "METHOD",
+      "level": "CLASS_LEVEL",
+      "type": "CODE_REMOVAL"
+   }
+]

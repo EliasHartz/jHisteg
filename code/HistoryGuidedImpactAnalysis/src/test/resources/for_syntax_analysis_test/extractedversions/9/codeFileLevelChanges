@@ -1,0 +1,7 @@
+[{
+   "pathInRepo": "src/thisPackageOfMine/ClassWithInnerClass.java",
+   "type": "MODIFIED"
+},{
+   "pathInRepo": "src/thisPackageOfMine/TestClass.java",
+   "type": "MODIFIED"
+}]

@@ -1,0 +1,34 @@
+<project name="FAKE PROJECT" default="compile" basedir=".">
+  <description>
+    Serves only to verify that version compiles!
+  </description>
+  
+  <!-- set global properties for this build -->
+  <property name="src" location="src"/>
+  <property name="build" location="build"/>
+
+  <target name="init">
+    <!-- Create the time stamp -->
+    <tstamp/>
+    <!-- Create the build directory structure used by compile -->
+    <mkdir dir="${build}"/>
+  </target>
+  
+  <target name="compile" depends="init"
+  description="compiles the source code into .class files inside the build-folder" >
+    <!-- Compile the java code from ${src} into ${build} -->
+          <javac includeantruntime="false" srcdir="${src}" destdir="${build}"/>
+  </target>
+
+  
+  <target name="clean" description="clean up">
+    <!-- Delete the ${build} and ${jar} directory trees -->
+    <delete dir="${build}"/>
+    <delete dir="${jar}"/>
+  </target>
+  
+  <target name="clear" depends="clean" description="just a different macro for 'clean'" >
+    <!-- NOTHING-->
+  </target>
+  
+</project>

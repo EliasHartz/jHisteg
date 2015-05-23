@@ -1,0 +1,259 @@
+* EvoSuite 
+Name                                     Type                                Default               Description
+CP                                       String                                                    The classpath of the target classes
+OUTPUT_DIR                               String                              evosuite-files        Directory in which to put generated files
+PROJECT_DIR                              String                                                    Directory name of target package
+PROJECT_PREFIX                           String                                                    Package name of target package
+TARGET_CLASS                             String                                                    Class under test
+TARGET_CLASS_PREFIX                      String                                                    Prefix of classes we are trying to cover
+TT                                       boolean                             false                 Testability transformation
+TT_stack                                 int                                 10                    Maximum stack depth for testability transformation
+UI_BACKGROUND_COVERAGE_DELAY             int                                 -1                    How often to write out coverage information in the background (in ms). -1 to disable.
+algorithm                                Algorithm                           STEADYSTATEGA         Search algorithm (Values: [STANDARDGA, STEADYSTATEGA, ONEPLUSONEEA, MUPLUSLAMBDAGA, RANDOM, NSGAII])
+alternative_fitness_calculation_mode     AlternativeFitnessCalculationMode   SUM                    (Values: [SUM, MIN, MAX, AVG, SINGLE])
+analysis_criteria                        String                                                    List of criteria which should be measured on the completed test suite
+array_limit                              int                                 1000000               Hard limit on array allocation in the code
+assertion_strategy                       AssertionStrategy                   MUTATION              Which assertions to generate (Values: [ALL, MUTATION, UNIT, STRUCTURED])
+assertion_timeout                        int                                 600                   Seconds allowed for assertion generation at the end
+assertions                               boolean                             true                  Create assertions
+bloat_factor                             int                                 2                     Maximum relative increase in length
+branch_comparison_types                  boolean                             false                 Track branch comparison types based on the bytecode
+branch_eval                              boolean                             false                 Jeremy's branch evaluation
+branch_statement                         boolean                             false                 Require statement coverage for branch coverage
+break_on_exception                       boolean                             true                  Stop test execution if exception occurrs
+call_probability                         double                              0.0                   Probability to reuse an existing test case, if it produces a required object
+carve_object_pool                        boolean                             false                 Carve junit tests for pool
+carving_timeout                          int                                 600                   Seconds allowed for carving JUnit tests
+check_best_length                        boolean                             true                  Check length against length of best individual
+check_contracts                          boolean                             false                 Check contracts during test execution
+check_contracts_end                      boolean                             false                 Check contracts only once per test
+check_max_length                         boolean                             true                  Check length against fixed maximum
+check_parents_length                     boolean                             false                 Check length against length of parents
+chop_carved_exceptions                   boolean                             true                  If a carved test throws an exception, either chop it off, or drop it
+chromosome_length                        int                                 40                    Maximum length of chromosomes during search
+classpath                                String[]                            []                    The classpath needed to compile the seeding test case.
+client_on_thread                         boolean                             false                 Run client process on same JVM of master in separate thread. To be used only for debugging purposes
+cluster_recursion                        int                                 10                    The maximum level of recursion when calculating the dependencies in the test cluster
+compositional_fitness                    boolean                             false                 Compositional fitness function
+concolic_mutation                        double                              0.0                   Probability of using concolic mutation operator
+concolic_timeout                         int                                 15000                 Milliseconds allowed per test during concolic execution
+configuration_id                         String                                                    Label that identifies the used configuration of EvoSuite. This is only done when running experiments.
+connection_data                          String                              connection.xml        File in which connection data is stored
+consider_main_methods                    boolean                             false                 Generate unit tests for 'main(String[] args)' methods as well
+constraint_solution_attempts             int                                 3                     Number of attempts to solve constraints related to one code branch
+coverage                                 boolean                             true                  Minimize test suite after generation
+coverage_matrix                          boolean                             false                 Create coverage matrix
+cpu_timeout                              boolean                             false                 Measure timeouts on CPU time, not global time
+criterion                                Criterion[]                         [BRANCH]              Coverage criterion
+crossover_function                       CrossoverFunction                   SINGLEPOINTRELATIVE   Crossover function during search (Values: [SINGLEPOINTRELATIVE, SINGLEPOINTFIXED, SINGLEPOINT, COVERAGE])
+crossover_rate                           double                              0.75                  Probability of crossover
+ctg_cores                                int                                 1                     Number of cores CTG will use
+ctg_folder                               String                              .evosuite             Where generated files will be stored
+ctg_history_file                         String                                                    File with the history of every class
+ctg_memory                               int                                 1000                  Total Memory (in MB) that CTG will use
+ctg_min_time_per_job                     int                                 1                     How many minutes each class under test should have at least
+ctg_schedule                             AvailableSchedule                   SIMPLE                Schedule used to run jobs (Values: [SIMPLE, BUDGET, SEEDING, BUDGET_AND_SEEDING, HISTORY])
+ctg_selected_cuts                        String                                                    Comma ',' separated list of CUTs to use in CTG. If none specified, then test all classes
+ctg_time                                 int                                 1                     How many minutes in total CTG will run
+ctg_time_per_class                       Integer                                                   How many minutes to allocate for each class. If this parameter is set, then ctg_time is going to be ignored. This parameter is mainly meant for debugging purposes.
+ctg_tmp_folder                           String                              tmp                   Temporary directory
+debug                                    boolean                             false                 Enables debugging support in the client VM
+defuse_aliases                           boolean                             true                  
+defuse_debug_mode                        boolean                             false                 
+dse_constant_probability                 double                              0.5                   Probability with which to use constants from the constraints when resetting variables during search
+dse_constraint_length                    int                                 100000                Maximal length of the constraints in DSE
+dse_constraint_solver_timeout_millis     long                                1000                  Maximum number of solving time for Constraint solver in milliseconds
+dse_keep_all_tests                       boolean                             false                 Keep tests even if they do not increase fitness
+dse_negate_all_conditions                boolean                             true                  Negate all branch conditions in the path condition (covered or not)
+dse_rank_branch_conditions               boolean                             true                  Rank branch conditions
+dse_variable_resets                      int                                 2                     Times DSE resets the int and real variables with random values
+dynamic_limit                            boolean                             false                 Multiply search budget by number of test goals
+dynamic_pool                             double                              0.5                   Probability to use a primitive from the dynamic pool rather than a random value
+dynamic_pool_size                        int                                 50                    Number of dynamic constants to keep
+dynamic_seeding                          boolean                             false                 Use numeric dynamic seeding
+elite                                    int                                 1                     Elite size for search algorithm
+enable_alternative_fitness_calculation   boolean                             false                 
+enable_alternative_suite_fitness         boolean                             false                 
+enable_asserts_for_evosuite              boolean                             false                 When running EvoSuite clients, for debugging purposes check its assserts
+enable_asserts_for_sut                   boolean                             true                  Check asserts in the SUT
+epsilon                                  double                              0.001                 Epsilon for floats in local search
+error_branches                           boolean                             false                 Instrument code with error checking branches
+evosuite_use_uispec                      boolean                             false                 If set to true EvoSuite test generation inits UISpec in order to avoid display of UI
+extra_timeout                            int                                 120                   Extra seconds allowed for the search
+filter_assertions                        boolean                             false                 Filter flaky assertions
+filter_sandbox_tests                     boolean                             false                 Drop tests that require the sandbox
+global_timeout                           int                                 600                   Maximum seconds allowed for entire search when not using time as stopping criterion
+group_id                                 String                              none                  Label that specifies a group the SUT belongs to. This is only needed for running experiments.
+handle_static_fields                     boolean                             true                  Include methods that update required static fields
+headless_chicken_test                    boolean                             false                 Activate headless chicken test
+headless_mode                            boolean                             true                  Run Java in AWT Headless mode
+hierarchy_data                           String                              hierarchy.xml         File in which hierarchy data is stored
+html                                     boolean                             true                  Create html reports
+ignore_threads                           String[]                            []                    Do not attempt to kill threads matching this prefix
+inheritance_file                         String                                                    Cached version of inheritance tree
+initialization_timeout                   int                                 600                   Seconds allowed for initializing the search
+inline                                   boolean                             false                 Inline all constants
+insertion_score_object                   int                                 1                     Score for selection of insertion of call on existing object
+insertion_score_parameter                int                                 1                     Score for selection of insertion call with existing object
+insertion_score_uut                      int                                 1                     Score for selection of insertion of UUT calls
+instrument_context                       boolean                             false                 Also instrument methods called from the SUT
+instrument_parent                        boolean                             false                 Also count coverage goals in superclasses
+instrumentation_skip_debug               boolean                             false                 Skip debug information in bytecode instrumentation (needed for compatibility with classes transformed by Emma code instrumentation due to an ASM bug)
+junit_check                              boolean                             true                  Compile and run resulting JUnit test suite
+junit_check_on_separate_process          boolean                             false                 Compile and run resulting JUnit test suite on a separate process
+junit_extend                             String                                                    Extend existing JUnit test suite
+junit_prefix                             String                                                    Prefix of JUnit tests to execute
+junit_strict                             boolean                             false                 Only include test files containing the target classname
+junit_suffix                             String                              _ESTest               Suffix that is appended at each generated JUnit file name
+junit_tests                              boolean                             true                  Create JUnit test suites
+junit_theories                           String                                                    Check JUnit theories as contracts
+kincompensation                          double                              1.0                   Penalty for duplicate individuals
+local_search_adaptation_rate             double                              0.33                  Apply local search at every X generation
+local_search_arrays                      boolean                             true                  Perform local search on array statements
+local_search_budget                      long                                100                   Maximum attempts at improving individuals per local search
+local_search_budget_type                 LocalSearchBudgetType               STATEMENTS            Interpretation of local_search_budget (Values: [STATEMENTS, TESTS, TIME, SUITES, FITNESS_EVALUATIONS])
+local_search_dse                         DSEType                             OFF                   Granularity of DSE application (Values: [OFF, STATEMENT, TEST, SUITE])
+local_search_ensure_double_execution     boolean                             true                  If a branch is only executed once by a test suite, duplicate that test
+local_search_expand_tests                boolean                             true                  Expand test cases before applying local search such that each primitive is used only once
+local_search_primitives                  boolean                             true                  Perform local search on primitive values
+local_search_probability                 double                              1.0                   Apply local search at every X generation
+local_search_probes                      int                                 10                    How many mutations to apply to a string to check whether it improves coverage
+local_search_rate                        int                                 -1                    Apply local search at every X generation
+local_search_references                  boolean                             true                  Perform local search on reference types
+local_search_restore_coverage            boolean                             true                  Add tests that cover branches already covered in the past
+local_search_selective                   boolean                             false                 Apply local search only to individuals that changed fitness
+local_search_selective_primitives        boolean                             false                 Only check primitives for selective LS
+local_search_strings                     boolean                             true                  Perform local search on primitive values
+log.level                                String                                                    Verbosity level of logger
+log.target                               String                                                    Target logger - all logging if not set
+log_goals                                boolean                             false                 Create a CSV file for each individual evolution
+log_timeout                              boolean                             false                 Produce output each time a test times out
+make_accessible                          boolean                             false                 Change default package rights to public package rights (?)
+max_array                                int                                 10                    Maximum length of randomly generated arrays
+max_attempts                             int                                 1000                  Number of attempts when generating an object before giving up
+max_coverage_depth                       int                                 -1                    Maximum depth in the calltree to count a branch as covered
+max_delta                                int                                 20                    Maximum size of delta for numbers during mutation
+max_generic_depth                        int                                 3                     Maximum level of nesting for generic types
+max_initial_tests                        int                                 10                    Maximum number of tests in initial test suites
+max_int                                  int                                 2048                  Maximum size of randomly generated integers (minimum range = -1 * max)
+max_length                               int                                 0                     Maximum length of test suites (0 = no check)
+max_mutants                              int                                 100                   Maximum number of mutants to target at the same time
+max_mutants_per_method                   int                                 700                   How many mutants can be inserted into a single method
+max_mutants_per_test                     int                                 100                   How many mutants to use when trying to find assertions for a test
+max_recursion                            int                                 10                    Recursion depth when trying to create objects
+max_replace_mutants                      int                                 100                   How many replacement mutants can be inserted for any one variable
+max_size                                 int                                 100                   Maximum number of test cases in a test suite
+max_stalled_threads                      int                                 10                    Number of stalled threads
+min_free_mem                             int                                 50000000              Minimum amount of available memory
+min_initial_tests                        int                                 1                     Minimum number of tests in initial test suites
+minimization_timeout                     int                                 600                   Seconds allowed for minimization at the end
+minimize                                 boolean                             true                  Minimize test suite after generation
+minimize_old                             boolean                             false                 Minimize test suite using old algorithm
+minimize_second_pass                     boolean                             true                  Minimize test suite after generation
+minimize_skip_coincidental               boolean                             true                  Minimize test suite after generation
+minimize_values                          boolean                             false                 Minimize constants and method calls
+mutation_generations                     int                                 10                    Number of generations before changing the currently targeted mutants
+mutation_rate                            double                              0.75                  Probability of mutation
+mutation_timeouts                        int                                 3                     Number of timeouts before we consider a mutant killed
+mux_started_threads                      int                                 100                   Max number of threads allowed to be started in each test
+new_statistics                           boolean                             true                  Use the new statistics backend on the master
+no_runtime_dependency                    boolean                             false                 Avoid runtime dependencies in JUnit test
+null_probability                         double                              0.1                   Probability to use null instead of constructing an object
+num_random_tests                         int                                 20                    Number of random tests
+num_tests                                int                                 2                     Number of tests in initial test suites
+number_of_mutations                      int                                 1                     Number of single mutations applied on an individual when a mutation event occurs
+object_pools                             String                                                    List of object pools
+object_reuse_probability                 double                              0.9                   Probability to reuse an existing reference, if available
+output_granularity                       OutputGranularity                   MERGED                Write all test cases for a class into a single file or to separate files. (Values: [MERGED, TESTCASE])
+output_variables                         String                                                    List of variables to output to CSV file. Variables are separated by commas. Null represents default values
+p_change_parameter                       double                              0.1                   Initial probability of inserting a new statement in a test case
+p_object_pool                            double                              0.3                   Probability to use a predefined sequence from the pool rather than a random generator
+p_special_type_call                      double                              0.05                  Probability of using a non-standard call on a special case (collection/numeric)
+p_statement_insertion                    double                              0.5                   Initial probability of inserting a new statement in a test case
+p_test_change                            double                              0.3333333333333333    Probability of changing statements during mutation
+p_test_delete                            double                              0.3333333333333333    Probability of deleting statements during mutation
+p_test_insert                            double                              0.3333333333333333    Probability of inserting new statements during mutation
+p_test_insertion                         double                              0.1                   Initial probability of inserting a new test in a test suite
+parent_check                             boolean                             true                  Check against parents in Mu+Lambda algorithm
+plot                                     boolean                             false                 Create plots of size and fitness
+population                               int                                 50                    Population size of genetic algorithm
+population_limit                         PopulationLimit                     INDIVIDUALS           What to use as limit for the population size (Values: [INDIVIDUALS, TESTS, STATEMENTS])
+port                                     int                                 1044                  Port on localhost, to which the client VM will listen for a remote debugger; defaults to 1044
+primitive_pool                           double                              0.5                   Probability to use a primitive from the pool rather than a random value
+primitive_reuse_probability              double                              0.5                   Probability to reuse an existing primitive, if available
+print_covered_goals                      boolean                             false                 Print out covered goals during test generation
+print_current_goals                      boolean                             false                 Print out current goal during test generation
+print_to_system                          boolean                             false                 Allow test output on console
+process_communication_port               int                                 -1                    Port at which the communication with the external process is done
+pure_equals                              boolean                             false                 Selects only an underapproximation of equals(Object) that are also known to be pure (no side-effects)
+pure_inspectors                          boolean                             true                  Selects only an underapproximation of all inspectors that are also pure (no side-effects)
+random_perturbation                      double                              0.2                   Probability to replace a primitive with a random new value rather than adding a delta
+random_seed                              Long                                                      Seed used for random generator. If left empty, use current time
+random_tests                             int                                 0                     Number of random tests to run before test generation (Single branch mode)
+randomize_difficulty                     boolean                             true                  
+rank_bias                                double                              1.7                   Bias for better individuals in rank selection
+recycle_chromosomes                      boolean                             true                  Seed initial population with related individuals (Single branch mode)
+remote_testing                           boolean                             false                 Include remote calls
+replace_calls                            boolean                             true                  Replace nondeterministic calls and System.exit
+replace_system_in                        boolean                             true                  Replace System.in with a smart stub/mock
+replacement_function                     TheReplacementFunction              DEFAULT               Replacement function for comparing offspring to parents during search (Values: [FITNESSREPLACEMENT, DEFAULT])
+report_dir                               String                              evosuite-report       Directory in which to put HTML and CSV reports
+reset_standard_streams                   boolean                             false                 Restore System.out, System.in and DebugGraphics.logStream after test execution
+reset_static_fields                      boolean                             true                  Call static constructors only after each a static field was modified
+restrict_pool                            boolean                             false                 Prohibit integers in the pool greater than max_int
+reuse_budget                             boolean                             true                  Use leftover budget on unsatisfied test goals (Single branch mode)
+sandbox                                  boolean                             true                  Execute tests in a sandbox environment
+sandbox_mode                             SandboxMode                         RECOMMENDED           Mode in which the sandbox is applied (Values: [OFF, RECOMMENDED, IO])
+save_all_data                            boolean                             true                  Generate and store all data reports
+scaffolding_suffix                       String                              scaffolding           Suffix used to specify scaffolding files
+search_budget                            long                                60                    Maximum search duration
+secondary_objectives                     String                              totallength           Secondary objective during search
+seed_clone                               double                              0.2                   Probability with which existing individuals are cloned
+seed_dir                                 String                              evosuite-seeds        Directory name to save best chromosomes
+seed_mutations                           int                                 2                     Number of mutations applied to a cloned individual
+seed_types                               boolean                             true                  Use type information gathered from casts to instantiate generics
+selected_junit                           String                                                    List of fully qualified class names (separated by ':') indicating which JUnit test suites the user has selected (e.g., for seeding)
+selection_function                       SelectionFunction                   RANK                  Selection function during search (Values: [RANK, ROULETTEWHEEL, TOURNAMENT, BINARY_TOURNAMENT])
+serialize_ga                             boolean                             false                 Include the GA instance in the test generation result
+serialize_result                         boolean                             false                 Serialize result of search to main process
+show_progress                            boolean                             true                  Show progress bar on console
+shuffle_goals                            boolean                             true                  Shuffle test goals before test generation (Single branch mode)
+shutdown_hook                            boolean                             true                  Store test suite on Ctrl+C
+shutdown_timeout                         int                                 1000                  Milliseconds grace time to shut down test cleanly
+skip_covered                             boolean                             true                  Skip coverage goals that have already been (coincidentally) covered
+sourcepath                               String[]                            []                    The path to the test case source.
+starve_by_fitness                        boolean                             true                  
+statistics_backend                       StatisticsBackend                   CSV                   Which backend to use to collect data (Values: [NONE, CONSOLE, CSV, HTML, DEBUG])
+stop_zero                                boolean                             true                  Stop optimization once goal is covered
+stopping_condition                       StoppingCondition                   MAXTIME               What condition should be checked to end the search (Values: [MAXSTATEMENTS, MAXTESTS, MAXTIME, MAXGENERATIONS, MAXFITNESSEVALUATIONS])
+stopping_port                            int                                 -1                    Port at which a stopping condition waits for interruption
+strategy                                 Strategy                            EVOSUITE              Which mode to use (Values: [ONEBRANCH, EVOSUITE, RANDOM, RANDOM_FIXED, REGRESSION])
+string_length                            int                                 20                    Maximum length of randomly generated strings
+string_replacement                       boolean                             true                  Replace string.equals with levenshtein distance
+target_method                            String                                                    Method for which to generate tests
+target_method_list                       String                                                    A colon(:) separated list of methods for which to generate tests
+target_method_prefix                     String                                                    All methods matching prefix will be used for generating tests
+test_carving                             boolean                             false                 Enable test carving
+test_comments                            boolean                             true                  Include a header with coverage information for each test
+test_dir                                 String                              evosuite-tests        Directory in which to place JUnit tests
+test_excludes                            String                              test.excludes         File containing methods that should not be used in testing
+test_factory                             TestFactory                         RANDOM                Which factory creates tests (Values: [RANDOM, ALLMETHODS, TOURNAMENT, JUNIT, SERIALIZATION])
+test_format                              OutputFormat                        JUNIT4                Format of the resulting test cases (Values: [JUNIT3, JUNIT4, TESTNG])
+test_includes                            String                              test.includes         File containing methods that should be included in testing
+test_scaffolding                         boolean                             true                  Generate all the scaffolding needed to run EvoSuite JUnit tests in a separate file
+testability_transformation               boolean                             false                 Apply testability transformation (Yanchuan)
+timeline_interval                        long                                60000                 Time interval in milliseconds for timeline statistics
+timeout                                  int                                 5000                  Milliseconds allowed per test
+tools_jar_location                       String                                                    Location of where to locate tools.jar
+tournament_size                          int                                 10                    Number of individuals for tournament selection
+track_boolean_branches                   boolean                             false                 Track branches that have a distance of either 0 or 1
+track_covered_gradient_branches          boolean                             false                 Track gradient branches that were covered
+tt_scope                                 TransformationScope                 ALL                   Testability transformation (Values: [TARGET, PREFIX, ALL])
+usage_models                             String                                                    Names of usage model files
+usage_rate                               double                              0.5                   Probability with which to use transitions out of the OUM
+use_deprecated                           boolean                             false                 Include deprecated methods in tests
+virtual_fs                               boolean                             true                  Usa a virtual file system for all File I/O operations
+write_cfg                                boolean                             false                 Create CFG graphs
+write_pool                               String                                                    Keep sequences for object pool
+z3_path                                  String                                                    Indicates the path to the Z3 solver
+z3_str_path                              String                                                    Indicates the path to the Z3-Str solver

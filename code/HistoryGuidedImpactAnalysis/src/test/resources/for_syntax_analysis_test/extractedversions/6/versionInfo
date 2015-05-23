@@ -1,0 +1,19 @@
+{
+   "author": "Elias Hartz",
+   "buildLocation": "/home/elias/Documents/jmutops-mining/code/HistoryGuidedImpactAnalysis/./testResources/forSyntaxAnalysisTest/extractedVersions/6/version",
+   "commandToBuild": "compile",
+   "compiledSourcesIn": "/home/elias/Documents/jmutops-mining/code/HistoryGuidedImpactAnalysis/./testResources/forSyntaxAnalysisTest/extractedVersions/6/version/build",
+   "date": "Tue Nov 18 18:29:22 2014 +0100",
+   "identifier": "7c186b7b81b5b92e09ab351aff3799d8f278f06c",
+   "ignoredClassesByPrefix": [],
+   "ignoredClassesBySuffix": [],
+   "ignoredMethodsBySignature": [
+      "toString()Ljava/lang/String;",
+      "hashCode()I",
+      "equals(Ljava/lang/Object;)Z"
+   ],
+   "index": 6,
+   "msg": "renaming for the win!",
+   "comparingAgainstVersion": "68001032532869d0dcc08ae7ee856a7df95f425e",
+   "sourcesIn": "/home/elias/Documents/jmutops-mining/code/HistoryGuidedImpactAnalysis/./testResources/forSyntaxAnalysisTest/extractedVersions/6/version/src"
+}

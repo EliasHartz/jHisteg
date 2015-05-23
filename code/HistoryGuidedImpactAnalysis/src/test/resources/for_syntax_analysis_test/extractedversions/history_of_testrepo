@@ -1,0 +1,72 @@
+[
+   {
+      "author": "Elias Hartz",
+      "date": "Tue Nov 11 15:31:27 2014 +0100",
+      "identifier": "2189a143aeb3884ae451eec1bb6ea71d4391053c",
+      "index": 0,
+      "msg": "initial test class"
+   },
+   {
+      "author": "Elias Hartz",
+      "date": "Tue Nov 11 15:33:05 2014 +0100",
+      "identifier": "07492ff26e3db7648ff71caab8e5f96b3153a16d",
+      "index": 1,
+      "msg": "modified class"
+   },
+   {
+      "author": "Elias Hartz",
+      "date": "Tue Nov 11 15:39:44 2014 +0100",
+      "identifier": "4c81252a4b93c06db49b45e5b3428714c88a5522",
+      "index": 2,
+      "msg": "\"added new class, modified field access\""
+   },
+   {
+      "author": "Elias Hartz",
+      "date": "Fri Nov 14 15:29:40 2014 +0100",
+      "identifier": "7dda0e5489868da786d9a4c058a7f336b56bdd06",
+      "index": 3,
+      "msg": "inner and multiple classes, its terrible..."
+   },
+   {
+      "author": "Elias Hartz",
+      "date": "Tue Nov 18 16:59:38 2014 +0100",
+      "identifier": "49bdcd2d9173a3ab2f7d390d1264b413909f0bf9",
+      "index": 4,
+      "msg": "Runnables, more constructors, removal of overwriting"
+   },
+   {
+      "author": "Elias Hartz",
+      "date": "Tue Nov 18 18:21:32 2014 +0100",
+      "identifier": "68001032532869d0dcc08ae7ee856a7df95f425e",
+      "index": 5,
+      "msg": "welcome to attribute modification hell"
+   },
+   {
+      "author": "Elias Hartz",
+      "date": "Tue Nov 18 18:29:22 2014 +0100",
+      "identifier": "7c186b7b81b5b92e09ab351aff3799d8f278f06c",
+      "index": 6,
+      "msg": "renaming for the win!"
+   },
+   {
+      "author": "Elias Hartz",
+      "date": "Thu Dec 4 14:13:07 2014 +0100",
+      "identifier": "cbc1da02d5fc2249c3e6d040765c91417e3e75ba",
+      "index": 7,
+      "msg": "Added new class with inner classes"
+   },
+   {
+      "author": "Elias Hartz",
+      "date": "Thu Dec 4 14:16:19 2014 +0100",
+      "identifier": "31402c893b7d3e6d1746b6db5ce764d37ca0e2d9",
+      "index": 8,
+      "msg": "Removed and modified all inner classes!"
+   },
+   {
+      "author": "Elias Hartz",
+      "date": "Thu Dec 4 14:16:20 2014 +0100",
+      "identifier": "ba5093b7d3e6d1746b66b6db5ce764d37ca0e2d9",
+      "index": 9,
+      "msg": "Complexer data types..."
+   }
+]

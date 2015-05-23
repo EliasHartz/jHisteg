@@ -1,0 +1,20 @@
+{
+   "executionTraces": [{
+      "called": "mainPackage.SomeClass.echoAnInt(I)I",
+      "calledWithParameters": [{
+         "class": "int",
+         "value": "12345"
+      }],
+      "returned": {
+         "class": "int",
+         "value": "12345"
+      },
+      "trace": [
+         "[0]> ILOAD",
+         "[1]> IRETURN"
+      ],
+      "trace (line numbers)": ["Line 99"],
+      "type": "METHOD"
+   }],
+   "errors": []
+}

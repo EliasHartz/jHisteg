@@ -1,0 +1,310 @@
+{
+   "executionTraces": [
+      {
+         "called": "mainPackage.ClassWithInnerClass.<clinit>()V",
+         "calledWithParameters": [],
+         "returned": {
+            "class": "---",
+            "stringRepresentation": "void"
+         },
+         "trace": [
+            "[0]> NEW",
+            "[1]> DUP",
+            "[2]> INVOKESPECIAL",
+            {
+               "called": "mainPackage.ClassWithInnerClass$StaticInnerClass.<init>()V",
+               "calledWithParameters": [],
+               "returned": {
+                  "class": "---",
+                  "stringRepresentation": "void"
+               },
+               "trace": [
+                  "[0]> ALOAD",
+                  "[1]> INVOKESPECIAL",
+                  "[2]> ALOAD",
+                  "[3]> NEW",
+                  "[4]> DUP",
+                  "[5]> INVOKESPECIAL",
+                  "[6]> PUTFIELD",
+                  "[7]> RETURN"
+               ],
+               "trace (line numbers)": [
+                  "Line 56",
+                  "Line 57"
+               ],
+               "type": "CONSTRUCTOR"
+            },
+            "[3]> PUTSTATIC",
+            "[4]> RETURN"
+         ],
+         "trace (line numbers)": [
+            "Line 9",
+            "{{mainPackage.ClassWithInnerClass$StaticInnerClass.<init>()V}}",
+            "Line 9"
+         ],
+         "type": "METHOD"
+      },
+      {
+         "called": "mainPackage.ClassWithInnerClass.<init>()V",
+         "calledWithParameters": [],
+         "returned": {
+            "class": "---",
+            "stringRepresentation": "void"
+         },
+         "trace": [
+            "[0]> ALOAD",
+            "[1]> INVOKESPECIAL",
+            "[2]> ALOAD",
+            "[3]> LDC",
+            "[4]> PUTFIELD",
+            "[5]> ALOAD",
+            "[6]> NEW",
+            "[7]> DUP",
+            "[8]> ALOAD",
+            "[9]> BIPUSH",
+            "[10]> INVOKESPECIAL",
+            {
+               "called": "mainPackage.ClassWithInnerClass$InnerClass.<init>(LmainPackage/ClassWithInnerClass;I)V",
+               "calledWithParameters": [
+                  {
+                     "class": "mainPackage.ClassWithInnerClass",
+                     "hashCode": "hashCode() of object",
+                     "stringRepresentation": "toString() of object"
+                  },
+                  {
+                     "class": "int",
+                     "value": "42"
+                  }
+               ],
+               "returned": {
+                  "class": "---",
+                  "stringRepresentation": "void"
+               },
+               "trace": [
+                  "[0]> ALOAD",
+                  "[1]> ALOAD",
+                  "[2]> PUTFIELD",
+                  "[3]> ALOAD",
+                  "[4]> INVOKESPECIAL",
+                  "[5]> ALOAD",
+                  "[6]> ILOAD",
+                  "[7]> PUTFIELD",
+                  "[8]> RETURN"
+               ],
+               "trace (line numbers)": [
+                  "Line 30",
+                  "Line 31",
+                  "Line 32"
+               ],
+               "type": "CONSTRUCTOR"
+            },
+            "[11]> PUTFIELD",
+            "[12]> ALOAD",
+            "[13]> NEW",
+            "[14]> DUP",
+            "[15]> ALOAD",
+            "[16]> LDC",
+            "[17]> INVOKESPECIAL",
+            {
+               "called": "mainPackage.ClassWithInnerClass$PrivateInnerClass.<init>(LmainPackage/ClassWithInnerClass;F)V",
+               "calledWithParameters": [
+                  {
+                     "class": "mainPackage.ClassWithInnerClass",
+                     "hashCode": "hashCode() of object",
+                     "stringRepresentation": "toString() of object"
+                  },
+                  {
+                     "class": "float",
+                     "value": "888.0"
+                  }
+               ],
+               "returned": {
+                  "class": "---",
+                  "stringRepresentation": "void"
+               },
+               "trace": [
+                  "[0]> ALOAD",
+                  "[1]> ALOAD",
+                  "[2]> PUTFIELD",
+                  "[3]> ALOAD",
+                  "[4]> INVOKESPECIAL",
+                  "[5]> ALOAD",
+                  "[6]> NEW",
+                  "[7]> DUP",
+                  "[8]> FLOAD",
+                  "[9]> INVOKESPECIAL",
+                  "[10]> PUTFIELD",
+                  "[11]> RETURN"
+               ],
+               "trace (line numbers)": [
+                  "Line 43",
+                  "Line 44",
+                  "Line 45"
+               ],
+               "type": "CONSTRUCTOR"
+            },
+            "[18]> PUTFIELD",
+            "[19]> ALOAD",
+            "[20]> NEW",
+            "[21]> DUP",
+            "[22]> INVOKESPECIAL",
+            {
+               "called": "mainPackage.ClassWithInnerClass$StaticInnerClass.<init>()V",
+               "calledWithParameters": [],
+               "returned": {
+                  "class": "---",
+                  "stringRepresentation": "void"
+               },
+               "trace": [
+                  "[0]> ALOAD",
+                  "[1]> INVOKESPECIAL",
+                  "[2]> ALOAD",
+                  "[3]> NEW",
+                  "[4]> DUP",
+                  "[5]> INVOKESPECIAL",
+                  "[6]> PUTFIELD",
+                  "[7]> RETURN"
+               ],
+               "trace (line numbers)": [
+                  "Line 56",
+                  "Line 57"
+               ],
+               "type": "CONSTRUCTOR"
+            },
+            "[23]> INVOKEVIRTUAL",
+            {
+               "called": "mainPackage.ClassWithInnerClass$StaticInnerClass.giveMeAnObject()Ljava/lang/Object;",
+               "calledWithParameters": [],
+               "returned": {
+                  "class": "java.lang.Object",
+                  "hashCode": "hashCode() of object",
+                  "stringRepresentation": "toString() of object"
+               },
+               "trace": [
+                  "[0]> ALOAD",
+                  "[1]> GETFIELD",
+                  "[2]> ARETURN"
+               ],
+               "trace (line numbers)": ["Line 60"],
+               "type": "METHOD"
+            },
+            "[24]> PUTFIELD",
+            "[25]> RETURN"
+         ],
+         "trace (line numbers)": [
+            "Line 14",
+            "Line 15",
+            "Line 16",
+            "{{mainPackage.ClassWithInnerClass$InnerClass.<init>(LmainPackage/ClassWithInnerClass;I)V}}",
+            "Line 16",
+            "Line 17",
+            "{{mainPackage.ClassWithInnerClass$PrivateInnerClass.<init>(LmainPackage/ClassWithInnerClass;F)V}}",
+            "Line 17",
+            "Line 18",
+            "{{mainPackage.ClassWithInnerClass$StaticInnerClass.<init>()V}}",
+            "Line 18",
+            "{{mainPackage.ClassWithInnerClass$StaticInnerClass.giveMeAnObject()Ljava/lang/Object;}}",
+            "Line 18",
+            "Line 19"
+         ],
+         "type": "CONSTRUCTOR"
+      },
+      {
+         "called": "mainPackage.ClassWithInnerClass$InnerClass.getValue()I",
+         "calledWithParameters": [],
+         "returned": {
+            "class": "int",
+            "value": "42"
+         },
+         "trace": [
+            "[0]> ALOAD",
+            "[1]> GETFIELD",
+            "[2]> IRETURN"
+         ],
+         "trace (line numbers)": ["Line 35"],
+         "type": "METHOD"
+      },
+      {
+         "called": "mainPackage.ClassWithInnerClass.somethingSomething()Z",
+         "calledWithParameters": [],
+         "returned": {
+            "class": "boolean",
+            "value": "true"
+         },
+         "trace": [
+            "[0]> ALOAD",
+            "[1]> GETFIELD",
+            "[2]> INVOKEVIRTUAL",
+            {
+               "called": "mainPackage.ClassWithInnerClass$PrivateInnerClass.getValue()F",
+               "calledWithParameters": [],
+               "returned": {
+                  "class": "float",
+                  "value": "888.0"
+               },
+               "trace": [
+                  "[0]> ALOAD",
+                  "[1]> GETFIELD",
+                  "[2]> INVOKEVIRTUAL",
+                  "[3]> FRETURN"
+               ],
+               "trace (line numbers)": ["Line 48"],
+               "type": "METHOD"
+            },
+            "[3]> ALOAD",
+            "[4]> GETFIELD",
+            "[5]> INVOKEVIRTUAL",
+            {
+               "called": "mainPackage.ClassWithInnerClass$PrivateInnerClass.getBoxedValue()Ljava/lang/Float;",
+               "calledWithParameters": [],
+               "returned": {
+                  "class": "java.lang.Float",
+                  "hashCode": 1147011072,
+                  "stringRepresentation": "888.0"
+               },
+               "trace": [
+                  "[0]> ALOAD",
+                  "[1]> GETFIELD",
+                  "[2]> ARETURN"
+               ],
+               "trace (line numbers)": ["Line 52"],
+               "type": "METHOD"
+            },
+            "[6]> INVOKEVIRTUAL",
+            "[7]> FCMPL",
+            "[8]> IFNE",
+            "[9]> ICONST_1",
+            "[10]> GOTO",
+            "[12]> ISTORE",
+            "[13]> ILOAD",
+            "[14]> IRETURN"
+         ],
+         "trace (line numbers)": [
+            "Line 22",
+            "{{mainPackage.ClassWithInnerClass$PrivateInnerClass.getValue()F}}",
+            "Line 22",
+            "{{mainPackage.ClassWithInnerClass$PrivateInnerClass.getBoxedValue()Ljava/lang/Float;}}",
+            "Line 22",
+            "Line 23"
+         ],
+         "type": "METHOD"
+      },
+      {
+         "called": "mainPackage.ClassWithInnerClass$StaticInnerClass.giveMeAnObject()Ljava/lang/Object;",
+         "calledWithParameters": [],
+         "returned": {
+            "class": "java.lang.Object",
+            "hashCode": "hashCode() of object",
+            "stringRepresentation": "toString() of object"
+         },
+         "trace": [
+            "[0]> ALOAD",
+            "[1]> GETFIELD",
+            "[2]> ARETURN"
+         ],
+         "trace (line numbers)": ["Line 60"],
+         "type": "METHOD"
+      }
+   ],
+   "errors": []
+}

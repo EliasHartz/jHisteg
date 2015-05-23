@@ -1,0 +1,89 @@
+[
+   {
+      "affectedMethod": "<init>(LmainPackage/ClassWithInnerClass;F)V",
+      "class": "mainPackage.ClassWithInnerClass$PrivateInnerClass",
+      "codeAdded": "value = (- value);",
+      "codeType": "ASSIGNMENT",
+      "level": "METHOD_LEVEL",
+      "type": "CODE_ADDITION"
+   },
+   {
+      "affectedMethod": "getValue()F",
+      "class": "mainPackage.ClassWithInnerClass$PrivateInnerClass",
+      "codeRemoved": "getValue()",
+      "codeType": "METHOD",
+      "level": "CLASS_LEVEL",
+      "type": "CODE_REMOVAL"
+   },
+   {
+      "affectedMethod": "<init>(LmainPackage/ClassWithInnerClass;I)V",
+      "class": "mainPackage.ClassWithInnerClass$InnerClass",
+      "codeAdded": "value = (- value);",
+      "codeType": "ASSIGNMENT",
+      "level": "METHOD_LEVEL",
+      "type": "CODE_ADDITION"
+   },
+   {
+      "affectedMethod": "getValue()I",
+      "class": "mainPackage.ClassWithInnerClass$InnerClass",
+      "codeRemoved": "getValue()",
+      "codeType": "METHOD",
+      "level": "CLASS_LEVEL",
+      "type": "CODE_REMOVAL"
+   },
+   {
+      "classInPreviousVersion": "mainPackage.ClassWithInnerClass$StaticInnerClass",
+      "codeRemoved": "Object o",
+      "codeType": "FIELD",
+      "level": "CLASS_LEVEL",
+      "type": "CODE_REMOVAL"
+   },
+   {
+      "affectedMethod": "<init>()V",
+      "class": "mainPackage.ClassWithInnerClass",
+      "codeRemoved": "someString = \"someString\";",
+      "codeType": "ASSIGNMENT",
+      "level": "METHOD_LEVEL",
+      "type": "CODE_REMOVAL"
+   },
+   {
+      "affectedMethod": "giveMeAnObject()Ljava/lang/Object;",
+      "class": "mainPackage.ClassWithInnerClass$StaticInnerClass",
+      "codeAdded": "new String(\"blubber\");",
+      "codeType": "RETURN_STATEMENT",
+      "level": "METHOD_LEVEL",
+      "type": "CODE_ADDITION"
+   },
+   {
+      "affectedMethod": "<init>(LmainPackage/ClassWithInnerClass;F)V",
+      "class": "mainPackage.ClassWithInnerClass$PrivateInnerClass",
+      "codeAdded": "(value < 0f)",
+      "codeType": "IF_STATEMENT",
+      "level": "METHOD_LEVEL",
+      "type": "CODE_ADDITION"
+   },
+   {
+      "affectedMethod": "giveMeAnObject()Ljava/lang/Object;",
+      "class": "mainPackage.ClassWithInnerClass$StaticInnerClass",
+      "codeRemoved": "o;",
+      "codeType": "RETURN_STATEMENT",
+      "level": "METHOD_LEVEL",
+      "type": "CODE_REMOVAL"
+   },
+   {
+      "affectedMethod": "somethingSomething()Z",
+      "class": "mainPackage.ClassWithInnerClass",
+      "codeRemoved": "somethingSomething()",
+      "codeType": "METHOD",
+      "level": "CLASS_LEVEL",
+      "type": "CODE_REMOVAL"
+   },
+   {
+      "affectedMethod": "<init>(LmainPackage/ClassWithInnerClass;I)V",
+      "class": "mainPackage.ClassWithInnerClass$InnerClass",
+      "codeAdded": "(value < 0)",
+      "codeType": "IF_STATEMENT",
+      "level": "METHOD_LEVEL",
+      "type": "CODE_ADDITION"
+   }
+]

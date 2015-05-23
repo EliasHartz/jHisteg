@@ -1,0 +1,232 @@
+{
+   "executionTraces": [
+      {
+         "traceIndex": 1,
+         "called": "tests.TestSuite2.<init>()V",
+         "calledWithParameters": [],
+         "returned": {
+            "class": "---",
+            "stringRepresentation": "void"
+         },
+         "trace": [
+            "[0]> ALOAD",
+            "[1]> INVOKESPECIAL",
+            "[2]> RETURN"
+         ],
+         "type": "CONSTRUCTOR"
+      },
+      {
+         "traceIndex": 2,
+         "called": "tests.TestSuite2.testSomethingElse()V",
+         "calledWithParameters": [],
+         "returned": {
+            "class": "---",
+            "stringRepresentation": "void"
+         },
+         "trace": [
+            "[0]> NEW",
+            "[1]> DUP",
+            "[2]> INVOKESPECIAL",
+            {
+               "called": "otherPackage.IhateTheWorld.<init>()V",
+               "calledWithParameters": [],
+               "returned": {
+                  "class": "---",
+                  "stringRepresentation": "void"
+               },
+               "trace": [
+                  "[0]> ALOAD",
+                  "[1]> LDC",
+                  "[2]> INVOKESPECIAL",
+                  {
+                     "called": "mainPackage.HelloWorldMain.<init>(Ljava/lang/String;)V",
+                     "calledWithParameters": [{
+                        "class": "java.lang.String",
+                        "hashCode": -228942748,
+                        "stringRepresentation": "I hate the world"
+                     }],
+                     "returned": {
+                        "class": "---",
+                        "stringRepresentation": "void"
+                     },
+                     "trace": [
+                        "[0]> ALOAD",
+                        "[1]> INVOKESPECIAL",
+                        "[2]> ALOAD",
+                        "[3]> ICONST_1",
+                        "[4]> PUTFIELD",
+                        "[5]> ALOAD",
+                        "[6]> ALOAD",
+                        "[7]> PUTFIELD",
+                        "[8]> RETURN"
+                     ],
+                     "type": "CONSTRUCTOR"
+                  },
+                  "[3]> RETURN"
+               ],
+               "type": "CONSTRUCTOR"
+            },
+            "[3]> ASTORE",
+            "[4]> ALOAD",
+            "[5]> INVOKEVIRTUAL",
+            {
+               "called": "otherPackage.IhateTheWorld.say()V",
+               "calledWithParameters": [],
+               "returned": {
+                  "class": "---",
+                  "stringRepresentation": "void"
+               },
+               "trace": [
+                  "[0]> ALOAD",
+                  "[1]> GETFIELD",
+                  "[2]> LDC",
+                  "[3]> INVOKEVIRTUAL",
+                  "[4]> IFNE",
+                  "[9]> ALOAD",
+                  "[10]> INVOKESPECIAL",
+                  {
+                     "called": "mainPackage.HelloWorldMain.say()V",
+                     "calledWithParameters": [],
+                     "returned": {
+                        "class": "---",
+                        "stringRepresentation": "void"
+                     },
+                     "trace": [
+                        "[0]> ALOAD",
+                        "[1]> GETFIELD",
+                        "[2]> ASTORE",
+                        "[3]> ALOAD",
+                        "[4]> GETFIELD",
+                        "[5]> IFEQ",
+                        "[6]> ALOAD",
+                        "[7]> GETFIELD",
+                        "[8]> INVOKEVIRTUAL",
+                        "[9]> ASTORE",
+                        "[10]> GETSTATIC",
+                        "[11]> ALOAD",
+                        "[12]> INVOKEVIRTUAL",
+                        "[13]> RETURN"
+                     ],
+                     "type": "METHOD"
+                  },
+                  "[11]> RETURN"
+               ],
+               "type": "METHOD"
+            },
+            "[6]> ICONST_1",
+            "[7]> INVOKESTATIC",
+            "[8]> RETURN"
+         ],
+         "type": "METHOD"
+      },
+      {
+         "traceIndex": 3,
+         "called": "tests.TestSuite2.<init>()V",
+         "calledWithParameters": [],
+         "returned": {
+            "class": "---",
+            "stringRepresentation": "void"
+         },
+         "trace": [
+            "[0]> ALOAD",
+            "[1]> INVOKESPECIAL",
+            "[2]> RETURN"
+         ],
+         "type": "CONSTRUCTOR"
+      },
+      {
+         "traceIndex": 4,
+         "called": "tests.TestSuite2.testSomething()V",
+         "calledWithParameters": [],
+         "returned": {
+            "class": "---",
+            "stringRepresentation": "void"
+         },
+         "trace": [
+            "[0]> NEW",
+            "[1]> DUP",
+            "[2]> INVOKESPECIAL",
+            {
+               "called": "mainPackage.HelloWorldMain.<init>()V",
+               "calledWithParameters": [],
+               "returned": {
+                  "class": "---",
+                  "stringRepresentation": "void"
+               },
+               "trace": [
+                  "[0]> ALOAD",
+                  "[1]> LDC",
+                  "[2]> INVOKESPECIAL",
+                  {
+                     "called": "mainPackage.HelloWorldMain.<init>(Ljava/lang/String;)V",
+                     "calledWithParameters": [{
+                        "class": "java.lang.String",
+                        "hashCode": -832992604,
+                        "stringRepresentation": "Hello world"
+                     }],
+                     "returned": {
+                        "class": "---",
+                        "stringRepresentation": "void"
+                     },
+                     "trace": [
+                        "[0]> ALOAD",
+                        "[1]> INVOKESPECIAL",
+                        "[2]> ALOAD",
+                        "[3]> ICONST_1",
+                        "[4]> PUTFIELD",
+                        "[5]> ALOAD",
+                        "[6]> ALOAD",
+                        "[7]> PUTFIELD",
+                        "[8]> RETURN"
+                     ],
+                     "type": "CONSTRUCTOR"
+                  },
+                  "[3]> RETURN"
+               ],
+               "type": "CONSTRUCTOR"
+            },
+            "[3]> ASTORE",
+            "[4]> ALOAD",
+            "[5]> LDC",
+            "[6]> INVOKEVIRTUAL",
+            {
+               "called": "mainPackage.HelloWorldMain.respond(Ljava/lang/String;)V",
+               "calledWithParameters": [{
+                  "class": "java.lang.String",
+                  "hashCode": 67044404,
+                  "stringRepresentation": "Elias"
+               }],
+               "returned": {
+                  "class": "---",
+                  "stringRepresentation": "void"
+               },
+               "trace": [
+                  "[0]> ALOAD",
+                  "[1]> GETFIELD",
+                  "[2]> IFEQ",
+                  "[3]> GETSTATIC",
+                  "[4]> NEW",
+                  "[5]> DUP",
+                  "[6]> INVOKESPECIAL",
+                  "[7]> LDC",
+                  "[8]> INVOKEVIRTUAL",
+                  "[9]> ALOAD",
+                  "[10]> INVOKEVIRTUAL",
+                  "[11]> INVOKEVIRTUAL",
+                  "[12]> INVOKEVIRTUAL",
+                  "[13]> INVOKEVIRTUAL",
+                  "[14]> GOTO",
+                  "[25]> RETURN"
+               ],
+               "type": "METHOD"
+            },
+            "[7]> LDC",
+            "[8]> LDC",
+            "[9]> INVOKESTATIC",
+            "[10]> RETURN"
+         ],
+         "type": "METHOD"
+      }
+   ],
+   "errors": []
+}

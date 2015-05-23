@@ -1,0 +1,467 @@
+This tool implements functionality to extract specific versions of a project under a VCS
+to generate 'testing targets' which point to parts of the code that should most likely
+be checked/tested again because their behavior has been modified. This information is
+obtained by combining a static syntax comparison with actual execution data in the form
+of observed traces through the code of the project. Both sources and compiled sources
+must be available for this process. 
+
+*** AVAILABLE MODES OF EXECUTION: ***
+
+    'extract' = the tool will only extract and persist specified versions from
+                the repository. No compilation, instrumentation or testing target
+                computation will be performed, versions are extracted as-is. Use
+                this command if you just want to inspect a code base or perform
+                later steps, e.g. compilation, by external means.
+
+    'compile' = the tool will extract and subsequently compile specified
+                versions using the provided resources for execution (see
+                below). This code will *NOT* be not instrumented, it will
+                produce exactly the code that belongs to the corresponding
+                version, provided that code is compilable at all. Use this
+                if you require runnable versions of your code base but the
+                rest of this tool's functionality is of no interest to you.
+
+    'instrument' = in addition to the above steps, the instrumentation step
+                   will be performed. The compiled code from the
+                   previous step will be altered in-place, meaning
+                   that your project will behave differently than
+                   the original extracted and compiled version. The
+                   difference is that your code will now monitor its
+                   own execution and persist it as execution traces
+                   data on your drive.
+                   *NOTE*: Consequently, you can now generate traces
+                   by simply executing your program or a testsuite on
+                   this program. Traces are required by the final step!
+
+    'analyze' = Your code will be extracted, compiled and instrumented.
+                Afterwards, syntax analysis is performed and traces are
+                generated (if corresponding commands have been provided).
+
+    'compute' = Your code will be extracted, compiled and instrumented.
+                Afterwards, testing targets are computed by combining syntax
+                changes with present execution trace data (which is generated
+                if corresponding commands have been provided). Using this mode
+                can be interpreted as calling the tool's full functionality!
+
+*** PARAMETERS AND FLAGS: ***
+
+  ## OBTAINING DATA FROM REPOSITORIES: ##
+    '-clone <link>' = tells this tool that the repository to mine has to be downloaded
+                      first, the parameter <link> is the corresponding link to that 
+                      repository (read-only access is sufficient), which could be e.g.
+                      'git@git.assembla.com:test.git' to check out a repo called 'test'
+                      from assembla using Git's SSH protocol. Supported repository types
+                      are Git and SVN.
+                      A repo type can be enforced by adding the prefix !git! or !svn! to
+                      the provided address but normally, the type can be inferred!
+                      => short: '-cl <repo>'
+
+    '-repo <directory>' = instructs the program to use an existing repository directory
+                          on your harddrive in its *current* status. Very useful command
+                          for Git repositories since they support extracting versions
+                          without connecting any remote. Cannot be used together with
+                          '-clone' but can obviously work on a repository created in a
+                          previous run using the '-clone and --keepRepo' commands.
+                          => short: '-r <directory>'
+
+    '-name <name>' = OPTIONAL, sets a name for the repository to be downloaded. Cannot
+                     be used together with '-repo'. *NOTE* that if not present, a
+                     placeholder directory name will be used for extracted versions from
+                     the repository.
+                     => short: '-n <name>'
+
+    '--keepRepo' = instructs the program to keep a functional version of the repository
+                   that was downloaded and put it into the output directory. *NOTE* that
+                   this command will be *ignored* if '-clone' is not used.
+                   => short: '--kr'
+
+    '-branch <name>' = specifies the branch that is to be used for extracting versions,
+                       the default value is 'master'. *NOTE* that this is currently only
+                       supported for Git repositories and is being ignored otherwise.
+
+
+    '-versions [<identifier>,...]' = Use this parameter to specify the versions of the
+                                     repository that are to be compared against each other.
+                                     Versions are defined by their 'identifiers', e.g. a
+                                     hash for a Git repository or a revision number for
+                                     SVN. Your list should at least contain two entries if
+                                     you want to compute changes between versions of course!
+                                     As a *convenience* you may also just use one identifier
+                                     instead of the list, this causes the tool to perform
+                                     the requested operation based on the given version and
+                                     its immediate predecessor, which is automatically
+                                     selected using the repo's history.
+                                     => short: '-v [<identifier>,...]'
+
+    '-allVersions' = This command executes the '-versions' sequentially on all versions
+                     inside the repository's history.
+
+  ## PROVIDING STATIC RESOURCES FOR TOOL EXECUTION: ##
+
+    To properly function, you must provide the tool with a variety of resources. Both compiled
+    and uncompiled sources must be available for each of your extracted versions.
+    *NOTE*: Each of the flags in this category is explained with a list as argument,
+    each entry being matched to the corresponding version provided by '-versions'.
+    However, most of the time you actually do not have to, since the argument is
+    identical for all versions, e.g. the folder containing your source files. To
+    conveniently apply one single argument to all versions you specified, it is
+    supported to simply give the data directly and the value will be applied to
+    all versions. Note that for commands like '-ignoreBySuffix', the
+    arguments '[abc]' and 'abc' would have the same effect. All versions would
+    be configured with the value 'abc'. However, the list to be duplicated may
+    have other sizes as well, hence '[abc,def]' would work as well while giving
+    two arguments would not!
+
+    '-sources [<rel. path>, ...]' = use this command to specify the classpaths of
+                                   the source files for the different versions. This
+                                   command expects paths relative to the repository's
+                                   main directory, so if your repository would be at
+                                   '/files/repo' and your sources at '/files/repo/src',
+                                   your relative path would be only 'src'.
+                                   *NOTE* that if no location is provided, the source
+                                   path defaults to the main repository directory,
+                                   (relative path '.') which is likely not the
+                                   correct classpath for most projects.
+                                   => short: '-s [<rel. path>, ...]'
+
+    '-compiled [<rel. path>, ...]' = use this command to specify the classpaths of
+                                     compiled sources, which must in be a directory (not 
+                                     a JAR-file). If you need your source code compiled
+                                     first, build your project using '-buildCmd'
+                                     Similar to '-sources' this command expects a list
+                                     of relative paths as its parameter and defaults
+                                     to the repositories main directory.
+                                     => short: '-c [<rel. path>, ...]'
+
+    '-buildCmd [<data>, ...]' = use this command to define how your (ANT or Maven) build
+                                process is to be invoked. When working with a Apache Maven
+                                based repository, you could for example choose to provide
+                                '-buildCmd "clean install"' to build your project from
+                                The build-system's type (here Maven) can usually be
+                                inferred automatically but you can still enforce a one of
+                                the supported systems by beginning your provided command
+                                with either the string 'ant' or 'mvn'. You can use other
+                                build systems as well but those are unsupported, hence
+                                you will need to state the full command at all times!
+                                *NOTE THAT* this tool cannot determine reliably if the
+                                compiled sources present are adequate (aka match the
+                                source code of the version) and will therefore always
+                                compile the sources if you provide this command unless
+                                the code has already been *instrumented*. Since said
+                                instrumentation is only executed on adequate code, the
+                                compilation step can be safely skipped. Consequently, if
+                                you do not want to compile your sources for some reason,
+                                then do not provide the '-buildCmd' command!
+                                *NOTE ADDITIONALLY* that your command of choice should
+                                ideally produce fresh sources, deleting previously present
+                                code. See the '--cleanBuild' for more details!
+                                *NOTE FURTHERMORE* that your chosen command must produce
+                                all compiled sources, that is for both your project's code
+                                base and your tests if you intend to run or instrument
+                                tests in a later step.
+                                => short: '-bc [<data>, ...]'
+
+    '-buildSpot [<rel. path>, ...]' = this command defines where the build process is
+                                      invoked, so if your ANT or Maven xml-file is not
+                                      located in the main directory of the repository,
+                                      you can use this command to provide the locations.
+                                      You can point directly to the file or simply specify
+                                      a directory. Similar to '-sources' it expects a
+                                      list of relative paths for each version as its
+                                      parameter. If you are using another build system, you
+                                      should always point to the directory where your
+                                      command given by '-buildCmd is to be executed.
+                                      => short: '-bs [<rel. path>, ...]'
+
+    '-ignoreBySuffix [[<string>, ...], ...]' = use this command to exclude files from
+                                               instrumentation by classname suffix.
+                                               The primary use-case of this command is to
+                                               exclude JUnit test classes or other
+                                               sections of code that should not be taken
+                                               into account by the coverage analysis. The
+                                               check on the classname is *case-sensitive*,
+                                               thus a typical value to use might be 'Test'.
+                                               Take care when using this command, it will
+                                               obviously have an impact on all observed
+                                               traces, ignoring too much will make it all
+                                               but impossible to obtain sensible results!
+                                               => short: '-igsuf [[<string>, ...], ...]'
+
+    '-ignoreByPrefix [[<string>, ...], ...]' = this command is similar to the one above but
+                                               it excludes classnames using prefixes instead
+                                               *NOTE* that in the event that both commands
+                                               are used, a class is ignored if it matches to
+                                               *any* of the two conditions!
+                                               => short: '-igpre [[<string>, ...], ...]'
+
+    '-excludeDir [[<string>, ...], ...]' = this command another variant of instrumentation
+                                           exclusion control, this one takes relative paths to
+                                           directories (check '-sources' command for details).
+                                           All files contained in matching directories are ignored.
+                                           If your e.g. your tests share the classpath with the rest
+                                           of your code, you might use this command to exclude their
+                                           packages.
+                                           => short: '-exdir [[<string>, ...], ...]'
+
+    '-also [<rel. path>, ...]' = there are projects which have  more than one classpath, for example
+                                 to separate tests from actual source code. If you want these classes
+                                 instrumented as well, make use  of this command, which works in a
+                                 similar fashion as '-compiled'.
+                                 *NOTE* that this is intended as an advanced option to control
+                                 instrumentation, not as a main feature. While the additional classes
+                                 will be back-upped and instrumented, they will NOT be included in
+                                 the version's call graph and there is no option to provide additional
+                                 uncompiled sources on purpose! A versions primary source code should
+                                 be under '-compiled', that is its semantic!
+                                 => short: -------unavailable-------
+    '--injectFuncIntoAdditional [<rel. path>, ...]' = if '-also is used, you can furthermore provide
+                                                      this flag to inject the Coverage Observer
+                                                      functionality into the second classpath as well. 
+                                                      Use this only if you face problems during trace
+                                                      generation, normally you do not need this!
+                                                      Flag is ignored if no second classpath is given!
+                                                      => short: -------unavailable-------
+    '-excludeMethod [[<string>, ...], ...]' = To avoid bloating your observed traces with data
+                                              generated by internal calls like the frequent calls
+                                              to 'hashCode()I' by a HashMap. You can ignore
+                                              specific methods in all classes with this command.
+                                              To ignore a method, you need to provide a method
+                                              header as defined by the JVM, give for instance
+                                              'main([Ljava/lang/String;)V' to ignore main-methods.
+                                              *NOTE* that in contrast to the two commands above,
+                                              this one has default value: Unless you do not provide
+                                              a list of your own, 'hashCode', 'equals' and 'toString'
+                                              will be ignored for all classes.
+                                              => short: '-exmeth [[<string>, ...], ...]'
+    '--saferInstrumentation' = if this is provided, a safer and more compatible instrumentation method
+                               will be used. Resulting data is unaffected, use this if you have problems!
+                               => short: -------unavailable-------
+
+  ## GENERATING TRACES FOR CHANGE APPROXIMATION: ##
+
+    To properly function, you must provide the tool with data about concrete
+    executions of each of the versions, the so called traces. Once the code has
+    been instrumented, you are able to simply generate these traces by running
+    your program, which will then monitor its own execution and persist the
+    results on the drive. For convenience however, you may also use the
+    following commands instead of executing each version manually. Note that
+    if any of these execution commands are used, all present traces will be
+    overwritten (unless '--keepTraces'is given) while manually creating a
+    trace will always add a new 'observedTrace' file to the version's directory.
+    Commands listed here also support the convenience list-wrap, similar to the
+    ones in the section above.
+
+    '-tests [<rel. path>, ...]' = use this command to specify a directory containing
+                                  *COMPILED* JUnit tests for the different versions.
+                                  All tests found inside this directory will be executed!
+                                  The default value for this parameter is the value
+                                  of '-compiled', in this case *NO* tests will be
+                                  executed unless you explicitly state which ones to
+                                  execute using '-runTests (see below).
+                                  *NOTE*: Running tests from inside this tool requires
+                                  lots of memory! Remember, you can all generate traces
+                                  manually outside this tool once instrumentation has been
+                                  performed on a version!
+                                  => short: '-t [<rel. path>, ...]'
+
+    '-runTests [[<classn./path>, ...], ...]' = use this command to specify exactly which
+                                               JUnit tests are to be executed for each
+                                               version. You may use either fully qualified
+                                               class names or relative paths to directories
+                                               to execute all tests inside the that directory.
+                                               *NOTE* that whatever you intend to execute
+                                               must be inside a sub-directory of the value
+                                               of '-tests', otherwise it will be ignored!
+                                               => short: '-rt [[<rel. path>, ...], ...]'
+
+    '-skipTests [[<classname>, ...], ...]' = the opposite of '-runTests, can be used
+                                             to exclude specific tests. Takes *ONLY*
+                                             fully qualified class names!
+                                             => short: -------unavailable-------
+
+    '-runMain [[<classname>, ...], ...]' = by providing fully qualified class names,
+                                           e.g. 'Package.MyClass', and this command,
+                                           you can also generate traces. It will be
+                                           attempted to execute the given class' main
+                                           method with the arguments provided by the
+                                           next command below.
+                                           => short: '-rm [[<classname>, ...], ...]'
+
+    '-runMainArgs [[<data>, ...], ...]' = a supplementary command to '-runMain' to
+                                          provide the program arguments. It defaults
+                                          to an empty list, meaning no arguments are
+                                          provided. If '-runMain' is not used, this
+                                          command and its arguments will be ignored.
+                                          => short: '-rmarg [[<data>, ...], ...]'
+
+    '-runCommand [[<data>, ...], ...]' = finally, you can also simply state a command,
+                                         similar to '-buildCmd' that is to be executed.
+                                         The typical use case is to call a testing
+                                         target of your build system, e.g. 'ant test' if
+                                         that would be defined. *NOTE* that your command
+                                         MUST NOT recompile the source code, since the
+                                         instrumentation would be lost and no traces would
+                                         be generated. This tool not able to detect that
+                                         such an overwrite occurred, so be careful!
+                                         => short: '-rc [[<data>, ...], ...]'
+
+    '--coverageBased' = provide this flag to enable a coverage-based approach for
+                        comparison of execution traces. Instead of trying to
+                        determine at which points two traces start to differ,
+                        the coverage-based approach directly compares how often
+                        which bytecode instructions are executed. The order of
+                        resulting testing targets will therefore be affected
+                        stronger by quantity of behavioral difference while
+                        loosing precision in regards to locating the factually
+                        different behavior.
+                        => short: -------unavailable-------
+
+    '--distanceBased' = provide this flag to enable a distance-based approach for
+                        comparison of execution traces. Like '--coverageBased',
+                        this causes the location of the different behavior to be 
+                        deemphasized. This basically just runs the quantitative
+                        aspect of the normal trace comparison algorithm. This flag
+                        can be combined with '--coverageBased' to include both
+                        quantitative metrics in the final computation.
+                        => short: -------unavailable-------
+
+    '--keepTraces' = provide this flag to disable the purging of traces before creating
+                     new ones. Existing traces inside the version's directory will be taken
+                     into account by the testing target computation just like newly created
+                     ones and there is no duplicate checking! Use this flag with caution!
+                     => short: '--kt'
+
+  ## MISC FUNCTIONALITY: ##
+    '--override' = if supplied, a run will overwrite existing data instead of
+                   skipping operations. Use this to ensure fresh data or if the
+                   integrity of existing data is uncertain. *NOTE* that this flag
+                   includes the effect of the '--cleanBuild' flag!
+                   As such, make sure that your input is well-formed and points to
+                   the correct directories! In general, use with care!
+                   => short: '--ow'
+
+    '-out <directory>' = specifies the output location for all extracted or generated
+                         data, standard behavior is creating a new folder in the
+                         execution directory of the tool (named 'output').
+                         => short: '-o <directory>'
+
+    '--coverRenamed' = causes the renaming of variables and files to be treated as syntax
+                       changes during the corresponding analysis phase. If this flag is not
+                       given, they are ignored. Renaming detection is *not sound*, so enable
+                       this feature if your result does not contain the data you expect.
+                       => short: '--cr'
+    '--cleanBuild' = if you provide this flag, the compiled sources directory 
+                     will be deleted before any build command is executed. This
+                     may be necessary if your build command supplied through '-buildCmd'
+                     does not produce a fresh compilation. As a result, already
+                     instrumented code might get re-instrumented, causing corrupted
+                     results and ultimately leading to 'to large method' exceptions
+                     as your code gets larger with every tool run! Be *careful* with
+                     this command, as it does delete a directory entered by you, the
+                     user! Make *SURE* your input is correct!
+                     If provided, the additional compiled source code directory is
+                     deleted as well.
+                     => short: -------unavailable-------
+    '--doNotExportBytecode' = due to the modular, step-wise nature of this tool, the
+                              bytecode of all instrumented classes is exported
+                              during the instrumentation phase, persisted in
+                              human-readable form into each version's folder. This
+                              information is used to make source-lookups during test
+                              target generation. If you provide this flag, no sources
+                              are exported and these lookups are skipped. Consequently,
+                              you might obtain different results as diverging traces
+                              cannot be put into context anymore.
+                              => short: -------unavailable-------
+    '--exportFlat' = provide this flag to switch the export format for
+                     detected trace divergences from the default tree-based
+                     structure to a flat, list-based output format. Might
+                     make it easier to construct a parser for these results.
+                     This command has *NO* effect on the actual execution!
+                     => short: -------unavailable-------
+    '--generateForSyntax' = provide this flag to generate additional testing
+                            targets in a separate file that are only based
+                            on syntactic change information.
+                            => short: -------unavailable-------
+    '--generateForDivergence' = provide this flag to generate additional testing
+                                targets in a separate file that are only based on
+                                trace divergences.
+                                => short: -------unavailable-------
+    '--manualTraceMatch' = if you provide this flag, each version directory will
+                           be scanned for a 'traceMatching' file first before
+                           the automatic method based on entry points is called.
+                           You *MUST* create these files yourself! Its content
+                           must be a JSON Array containing JSON Objects matching
+                           traces by their identifiers:
+                              [
+                                {
+                                 "traceInThis": "file0_trace1",
+                                 "matchTo": "file0_trace2"
+                                }, (...)
+                              ]
+                           => short: -------unavailable-------
+    '--restrictSyntaxMapping' = Normally, a divergent trace section inside a
+                                syntactically unmodified section is mapped to all
+                                syntactically modified sections higher in its call
+                                chain. Provide this flag to restrict this mapping to
+                                the closest of those modified sections. This will
+                                obliviously influence your final results.
+                                => short: -------unavailable-------
+    '--filterObjects' = Provide this flag to consider any observed object for
+                        which the string representation contains the character
+                        '@' to have an equal toString() and hashCode() value
+                        during trace divergence analysis. This will of course
+                        gravely impact your final results!
+                        => short: -------unavailable-------
+    '--noTargetDetails' = provide this flag to prune all additional data from
+                         your testing targets.
+                         => short: -------unavailable-------
+
+
+  ## LOGGING OUTPUT CONTROL: ##
+    '--toolOutput' = Causes the output of external tools (such as your build system) to
+                     be included in the tool's output. Useful for debugging your provided
+                     arguments, e.g. a build command or a repository location.
+
+    '--loud' = Causes more output and feedback, helpful when something is going wrong.
+               This does not include the effects of the '--toolOutput' command!
+
+    '--quiet' = Suppresses most of the output. *NOTE* that errors will still be shown.
+                Furthermore, this will nullify the effects of other output commands!
+
+*** EXAMPLES: ***
+
+1.)'extract -clone "git://git.code.net/myProject" --keepRepo -out "./mining/output"'
+   will export a list of all commits on this GIT repository's master branch alongside a
+   functional copy of the repository itself into the specified directory. Since no
+   name was specified, a placeholder name will be used for both resulting files.
+
+2.)'extract -name "personalProject" -repo "./git/myRepo"' also results in 1.) but
+   the output folder will be named "personalProject" and an existing local copy will
+   be used for mining data. Because the target is a git repository, no network will be
+   required for the extraction, all required data is present inside the repository.
+   A local repository on your is of course never deleted afterwards, so a --keepRepo
+   is unnecessary and would have no effect.
+ 
+3.)'analyze -name "myRepo" -repo "projectsToMine/myRepo" -sources project/src 
+   -compiled project/build -versions [1017187158c02e5bf4934629c29f221593832e6c,
+   4103c4b7d2e80d0d3423b2f28989dda9a2878355] -buildCmd "clean compile"' will use
+   the command "clean compile" to compile each of the two versions individual.y
+   The syntactically differences between two will be analyzed but traces are not
+   generated as no execution-commands have been given. The user can do this manually by
+   executing the program now, as the compiled code has been instrumented.
+   *NOTE* that just like above, the location of both the uncompiled sources and the
+   compiled sources are given not as a list but as a single argument, using again
+   the convenience input feature. Like the build command, these arguments are being
+   applied to all versions specified using '-versions'. Furthermore, if
+   '4103c4b7d2e80d0d3423b2f28989dda9a2878355' would be the direct successor of the
+   version with the identifier '1017187158c02e5bf4934629c29f221593832e6c', we could
+   have only given the former and its predecessor version would be determined
+   automatically.
+ 
+4.)'compute -clone "git://git.code.net/myProject" -buildCmd "clean compile"
+   -sources project/src -compiled project/build -tests project/tests
+   -versions [1017187158c02e5bf4934629c29f221593832e6c,
+   4103c4b7d2e80d0d3423b2f28989dda9a2878355]' will  perform a full execution
+   will result in testing targets based on syntactic changes and execution
+   traces derived from JUnit tests contained in the 'tests' directory inside
+   your repository. Your targets will be exported to each version's directory.

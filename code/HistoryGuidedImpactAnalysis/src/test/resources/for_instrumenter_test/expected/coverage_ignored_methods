@@ -1,0 +1,89 @@
+{
+   "executionTraces": [
+      {
+         "called": "mainPackage.SomeClass.<init>()V",
+         "calledWithParameters": [],
+         "returned": {
+            "class": "---",
+            "stringRepresentation": "void"
+         },
+         "trace": [
+            "[0]> ALOAD",
+            "[1]> INVOKESPECIAL",
+            "[2]> ALOAD",
+            "[3]> LDC",
+            "[4]> PUTFIELD",
+            "[5]> ALOAD",
+            "[6]> ICONST_1",
+            "[7]> PUTFIELD",
+            "[8]> ALOAD",
+            "[9]> BIPUSH",
+            "[10]> PUTFIELD",
+            "[11]> ALOAD",
+            "[12]> BIPUSH",
+            "[13]> PUTFIELD",
+            "[14]> ALOAD",
+            "[15]> BIPUSH",
+            "[16]> PUTFIELD",
+            "[17]> ALOAD",
+            "[18]> BIPUSH",
+            "[19]> PUTFIELD",
+            "[20]> ALOAD",
+            "[21]> LDC",
+            "[22]> PUTFIELD",
+            "[23]> ALOAD",
+            "[24]> LDC",
+            "[25]> PUTFIELD",
+            "[26]> ALOAD",
+            "[27]> LDC",
+            "[28]> PUTFIELD",
+            "[29]> RETURN"
+         ],
+         "trace (line numbers)": [
+            "Line 18",
+            "Line 19",
+            "Line 20",
+            "Line 21",
+            "Line 22",
+            "Line 23",
+            "Line 24",
+            "Line 25",
+            "Line 26",
+            "Line 27",
+            "Line 28"
+         ],
+         "type": "CONSTRUCTOR"
+      },
+      {
+         "called": "mainPackage.SomeClass.getInteger()I",
+         "calledWithParameters": [],
+         "returned": {
+            "class": "int",
+            "value": "42"
+         },
+         "trace": [
+            "[0]> ALOAD",
+            "[1]> GETFIELD",
+            "[2]> IRETURN"
+         ],
+         "trace (line numbers)": ["Line 70"],
+         "type": "METHOD"
+      },
+      {
+         "called": "mainPackage.SomeClass.getBoolean()Z",
+         "calledWithParameters": [],
+         "returned": {
+            "class": "boolean",
+            "value": "true"
+         },
+         "trace": [
+            "[0]> ALOAD",
+            "[1]> GETFIELD",
+            "[2]> IRETURN"
+         ],
+         "trace (line numbers)": ["Line 54"],
+         "type": "METHOD"
+      }
+   ],
+   "errors": []
+}

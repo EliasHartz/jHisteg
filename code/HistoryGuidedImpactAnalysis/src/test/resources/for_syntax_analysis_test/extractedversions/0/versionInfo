@@ -1,0 +1,18 @@
+{
+   "author": "Elias Hartz",
+   "buildFileAt": "we ignore this in this test case!",
+   "commandToBuild": "compile",
+   "compiledSourcesAt": "ignored anyway............",
+   "date": "Tue Nov 11 15:31:27 2014 +0100",
+   "identifier": "2189a143aeb3884ae451eec1bb6ea71d4391053c",
+   "ignoredClassesByPrefix": [],
+   "ignoredClassesBySuffix": [],
+   "ignoredMethodsBySignature": [
+      "toString()Ljava/lang/String;",
+      "hashCode()I",
+      "equals(Ljava/lang/Object;)Z"
+   ],
+   "index": 0,
+   "msg": "initial test class",
+   "sourcesAt": "also ignored"
+}

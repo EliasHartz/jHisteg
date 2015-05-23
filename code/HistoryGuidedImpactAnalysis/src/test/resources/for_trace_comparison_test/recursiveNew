@@ -1,0 +1,51 @@
+{
+   "called": "myPackage.myClass.myMethod()V",
+   "calledWithParameters": [],
+   "returned": {
+      "class": "---",
+      "stringRepresentation": "void"
+   },
+   "trace": [
+     "[0]> INVOKESPECIAL",
+         {
+            "called": "myPackage.myClass.onlyInNewTraceAtStart()V",
+            "calledWithParameters": [],
+            "returned": {
+               "class": "---",
+               "stringRepresentation": "void"
+            },
+            "trace": [
+               "[0]> RETURN"
+            ],
+            "type": "METHOD"
+         },
+      "[0]> INVOKESPECIAL",
+      {
+         "called": "myPackage.myClass.matchableInner()I",
+         "calledWithParameters": [],
+         "returned": {
+            "class": "int",
+            "stringRepresentation": "1"
+         },
+         "trace": [
+            "[0]> RETURN"
+         ],
+         "type": "METHOD"
+      },
+      "[0]> INVOKESPECIAL",
+            {
+               "called": "myPackage.myClass.onlyInNewTrace()I",
+               "calledWithParameters": [],
+               "returned": {
+                  "class": "int",
+                  "stringRepresentation": "1"
+               },
+               "trace": [
+                  "[0]> RETURN"
+               ],
+               "type": "METHOD"
+            },
+      "[1]> RETURN"
+   ],
+   "type": "METHOD"
+}

@@ -1,0 +1,128 @@
+{
+   "called": "myPackage.myClass.myMethod()V",
+   "calledWithParameters": [],
+   "returned": {
+      "class": "---",
+      "stringRepresentation": "void"
+   },
+   "trace": [
+      "[0]> ALOAD",
+      "[1]> INVOKESPECIAL",
+      {
+         "called": "myPackage.myClass.methodTakingString(Ljava/lang/String;)V",
+         "calledWithParameters": [{
+            "class": "java.lang.String",
+            "hashCode": -228942748,
+            "stringRepresentation": "I hate the world"
+         }],
+         "returned": {
+            "class": "---",
+            "stringRepresentation": "void"
+         },
+         "trace": [
+            "[0]> ALOAD",
+            "[1]> INVOKESPECIAL",
+            "[2]> ALOAD",
+            "[3]> ALOAD",
+            "[4]> PUTFIELD",
+            "[5]> RETURN"
+         ],
+         "type": "METHOD"
+      },
+      "[10]> IF_ICMPNE",
+      "[11]> ICONST_1",
+      "[12]> GOTO",
+      "[0]> ALOAD",
+      "[1]> INVOKESPECIAL",
+      {
+         "called": "myPackage.myClass.anotherMethod()I",
+         "calledWithParameters": [],
+         "returned": {
+            "class": "int",
+            "value": "12345"
+         },
+         "trace": ["[5]> RETURN"],
+         "type": "METHOD"
+      },
+      "[10]> IF_ICMPNE",
+      "[11]> ICONST_1",
+      "[12]> GOTO",
+      "[0]> ALOAD",
+      "[1]> INVOKESPECIAL",
+      {
+         "called": "myPackage.myClass.methodTakingTwoStrings(Ljava/lang/String;Ljava/lang/String;)V",
+         "calledWithParameters": [
+            {
+               "class": "java.lang.String",
+               "hashCode": -4547428,
+               "stringRepresentation": "ABC"
+            },
+            {
+               "class": "java.lang.String",
+               "hashCode": -4547428,
+               "stringRepresentation": "ABC"
+            }
+         ],
+         "returned": {
+            "class": "---",
+            "stringRepresentation": "void"
+         },
+         "trace": [
+            "[0]> ALOAD",
+            "[4]> PUTFIELD",
+            "[5]> RETURN"
+         ],
+         "type": "METHOD"
+      },
+      "[22]> LDC",
+      "[23]> INVOKEVIRTUAL",
+      {
+         "called": "myPackage.myClass.someMethodThatIsUnchanged()V",
+         "calledWithParameters": [],
+         "returned": {
+            "class": "---",
+            "stringRepresentation": "void"
+         },
+         "trace": [
+            "[0]> ALOAD",
+            "[1]> INVOKESPECIAL",
+            {
+               "called": "myPackage.myClass.someNestedMethodCallWithTraceDifference()V",
+               "calledWithParameters": [],
+               "returned": {
+                  "class": "---",
+                  "stringRepresentation": "void"
+               },
+               "trace": [
+                   "[0]> ALOAD",
+                   "[5]> RETURN"
+               ],
+               "type": "METHOD"
+            },
+            "[5]> RETURN"
+         ],
+         "type": "METHOD"
+      },
+      "[04]> PUTFIELD",
+      "[05]> ALOAD",
+      "[06]> ICONST_1",
+      "[07]> PUTFIELD",
+      "[37]> ICONST_1",
+      "[23]> INVOKEVIRTUAL",
+      {
+         "called": "myPackage.myClass.nonMatchableMethodInOld()V",
+         "calledWithParameters": [],
+         "returned": {
+            "class": "---",
+            "stringRepresentation": "void"
+         },
+         "trace": ["[5]> RETURN"],
+         "type": "METHOD"
+      },
+      "[33]> IFNE",
+      "[37]> ICONST_1",
+      "[41]> ALOAD",
+      "[42]> RETURN"
+   ],
+   "type": "METHOD"
+}
